@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.browser-tabs {
+    margin: 0rem;
+    width: 100%;
+    height: 2.3rem;
+    text-align: left;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color .2s ease;
+
+    @include themed() {
+        background-color: t(browser-bg);
+    }
+
+    .nav-tab {
+        justify-self: flex-start;
+        padding: 3px 20px 4px 20px;
+        margin: 1px 1px 0px 1px;
+        border-radius: 5px 5px 0px 0px;
+        transition: .2s ease-in-out;
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 0.05rem;
+        text-decoration: none;
+        transition: .2s ease;
+        
+        @include themed() {
+            color: t(browser-font);
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            @include themed() {
+                background-color: t(browser-tab);
+            }
+
+        }
+    }
+}
+
+.nav-logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+.browser-buttons {
+    margin-left: auto;
+
+    .browser-button {
+        margin: 0rem 0.2rem;
+        --fa-secondary-opacity: 1;
+
+        &:first-of-type {
+            color: #00cc6a;
+        }
+
+        &:nth-of-type(2n) {
+            color: #ffb900;
+        }
+
+        &:last-of-type {
+            color: #e81123;
+        }
+    }
+}

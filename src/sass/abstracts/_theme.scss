@@ -1,0 +1,38 @@
+@use './colours' as *;
+
+$themes: (
+    light: (
+        browser-bg: $browser-bg-light,
+        browser-tab: $browser-tab-light,
+        browser-input: $browser-input-light,
+        browser-menu: $browser-menu-light,
+        browser-font: $browser-font-light,
+        browser-shadow: $browser-shadow-light,
+    ),
+    dark: (
+        browser-bg: $browser-bg-dark,
+        browser-tab: $browser-tab-dark,
+        browser-input: $browser-input-dark,
+        browser-menu: $browser-menu-dark,
+        browser-font: $browser-font-dark,
+        browser-shadow: $browser-shadow-dark,
+    )
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+  @function t($key) {
+    @return map-get($theme-map, $key);
+  }

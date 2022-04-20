@@ -1,51 +1,25 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from 'react';
+import { Routes, Route } from "react-router-dom";
+import './App.css';
+import Header from './components/header';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <div className={darkMode ? 'App dark-mode' : 'App light-mode'}>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Halp</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          <button type="button" onClick={() => setDarkMode(!darkMode)}>
-            toggle colours
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className={darkMode ? 'App theme--dark' : 'App theme--light'}>
+        <div className="screen">
+          <Header />
+          <Routes>
+            <Route path="/" element={<p>Home</p>} />
+            <Route path="/about" element={<p>About</p>} />
+            <Route path="*" element={<p>404</p>} />
+          </Routes>
+          <button onClick={() => setDarkMode(!darkMode)}>Mode</button>
+        </div>
+        <div className="monitor-stand" aria-hidden />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
