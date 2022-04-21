@@ -8,10 +8,12 @@
     justify-content: space-evenly;
     flex-flow: row nowrap;
     padding: 0rem 0.5rem;
+    z-index: 2;
 
     @include themed() {
         background-color: t(browser-tab);
         color: t(browser-font);
+        box-shadow: 0px 0px 5px t(browser-shadow);
     }
 
     @media (max-width: 640px) {

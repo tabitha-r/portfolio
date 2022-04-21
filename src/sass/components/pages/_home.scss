@@ -1,0 +1,269 @@
+@use '../../abstracts' as *;
+
+.home {
+    .top-bar {
+        height: 3rem;
+        margin: 0;
+        padding: 4px 1.5%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include themed() {
+            background-color: t(app-fg2);
+            color: t(app-font-primary);
+            box-shadow: 0px 0px 5px t(app-shadow);
+        }
+    }
+
+    
+    section {
+        width: 100%;
+    }
+    
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row nowrap;
+        transform: translateY(-21rem);
+        height: 0px;
+        
+        .logo {
+            max-width: 95%;
+
+            @include themed() {
+                filter: drop-shadow(2px 2px 3px t(app-shadow));
+            }
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: left;
+            font-weight: 600;
+            margin-left: 2rem;
+            line-height: 2.8rem;
+
+            @include themed() {
+                color: t(app-font-secondary);
+            }
+
+            .title-name {
+                font-weight: 900;
+                font-size: 6rem;
+                line-height: 5rem;
+
+                @include themed() {
+                    color: t(contrast-dark);
+                    filter: drop-shadow(1px 1px 2px t(app-shadow));
+                }
+            }
+        }
+    }
+
+    .cta-section {
+        height: auto;
+        padding: 64px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: $app-font-primary-light;
+
+        @include themed() {
+            background-color: t(contrast-dark);
+        }
+
+        .ctaContainer {
+            text-align: left;
+            width: 100%;
+        }
+        
+        p.customerProblem {
+            font-size: 2rem;
+            font-weight: 300;
+            width: 80%;
+            max-width: 800px;
+            margin: 2rem auto 2rem 11.5%;
+        }
+        
+        .bigCta {
+            text-align: left;
+            margin: 0px 10%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .bigCta h3 {
+            margin: 0;
+            padding: 0;
+            padding-left: 32px;
+            width: 50%;
+            min-width: 400px;
+            color: #fff;
+            font-size: 5rem;
+            border-left: 5px solid #fff;
+        }
+        
+        .bigCta button {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.2rem;
+            width: max-content;
+            padding: 16px;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            transition: .2s ease;
+            color: #577c8c;
+            background-color: #fff;
+            box-shadow: 3px 6px 0 #577c8c;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bigCta button .icon {
+            margin: 0px 10px;
+        }
+        
+        .bigCta button span {
+            max-width: 70%;
+            margin: 0px 16px;
+        }
+        
+        .bigCta button:hover {
+            color: #313654;
+            background-color: #e8e8e8;
+        }
+        
+        .bigCta button:active {
+            background-color: #d3d3d3;
+            box-shadow: 0px 0px 0px #fff;
+            transform: translateY(6px);
+        }
+        
+        @media screen and (max-width: 600px) {
+            .bigCta {
+                margin: 0;
+            }
+        
+            .bigCta h3 {
+                font-size: 2.5rem;
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+                width: 80vw;
+            }
+        
+            .bigCta button {
+                padding: 16px;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .floating-icons {
+        width: 100%;
+        height: 85%;
+        overflow: hidden;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+        justify-content: space-around;
+        font-size: 2.5rem;
+
+        .floating-icon {
+            transform: translateY(3rem);
+            --fa-secondary-opacity: 0.7;
+
+            &:first-child {
+                animation: 10s floatup linear 8s infinite;
+
+                @include themed() {
+                    color: t(contrast-dark);
+                }
+            }
+            &:nth-child(2) {
+                animation: 12s floatup linear 16s infinite;
+
+                @include themed() {
+                    color: t(app-font-secondary);
+                }
+            }
+            &:nth-child(3) {
+                animation: 14s floatup linear 2s infinite;
+
+                @include themed() {
+                    color: t(contrast-light);
+                }
+            }
+            &:nth-child(4) {
+                animation: 10s floatup linear 10s infinite;
+
+                @include themed() {
+                    color: t(app-font-primary);
+                }
+            }
+            &:nth-child(5) {
+                animation: 16s floatup linear 6s infinite;
+
+                @include themed() {
+                    color: t(app-font-secondary);
+                }
+            }
+            &:nth-child(6) {
+                animation: 12s floatup linear 4s infinite;
+
+                @include themed() {
+                    color: t(contrast-mid);
+                }
+            }
+            &:nth-child(7) {
+                animation: 10s floatup linear 12s infinite;
+
+                @include themed() {
+                    color: t(contrast-dark);
+                }
+            }
+            &:nth-child(8) {
+                animation: 12s floatup linear 16s infinite;
+
+                @include themed() {
+                    color: t(app-font-primary);
+                }
+            }
+            &:nth-child(9) {
+                animation: 14s floatup linear 8s infinite;
+
+                @include themed() {
+                    color: t(app-font-secondary);
+                }
+            }
+            &:nth-child(10) {
+                animation: 16s floatup linear 6s infinite;
+
+                @include themed() {
+                    color: t(contrast-light);
+                }
+            }
+        }
+    }
+}
+
+@keyframes floatup {
+    0% {
+        transform: translateY(3rem) rotate(320deg);
+        opacity: 0.4;
+    }
+
+    40% {
+        transform: translateY(-1200%) rotate(20deg);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -256,14 +256,17 @@ https://www.github.com/tabitha-r/
   justify-content: space-evenly;
   flex-flow: row nowrap;
   padding: 0rem 0.5rem;
+  z-index: 2;
 }
 .theme--light .url-bar {
   background-color: white;
   color: #0f0f10;
+  box-shadow: 0px 0px 5px #a1a1a1;
 }
 .theme--dark .url-bar {
   background-color: #303030;
   color: #d6d6d7;
+  box-shadow: 0px 0px 5px #151519;
 }
 @media (max-width: 640px) {
   .url-bar > :first-child {
@@ -572,6 +575,281 @@ https://www.github.com/tabitha-r/
 .theme--dark .page.not-found section {
   background-color: #36393f;
   box-shadow: inset 0px 0px 10px #020203;
+}
+
+.home .top-bar {
+  height: 3rem;
+  margin: 0;
+  padding: 4px 1.5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.theme--light .home .top-bar {
+  background-color: white;
+  color: #111112;
+  box-shadow: 0px 0px 5px #2f2f37;
+}
+.theme--dark .home .top-bar {
+  background-color: #36393f;
+  color: #f2f2f2;
+  box-shadow: 0px 0px 5px #020203;
+}
+.home section {
+  width: 100%;
+}
+.home .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  transform: translateY(-21rem);
+  height: 0px;
+}
+.home .hero .logo {
+  max-width: 95%;
+}
+.theme--light .home .hero .logo {
+  filter: drop-shadow(2px 2px 3px #2f2f37);
+}
+.theme--dark .home .hero .logo {
+  filter: drop-shadow(2px 2px 3px #020203);
+}
+.home .hero h2 {
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 600;
+  margin-left: 2rem;
+  line-height: 2.8rem;
+}
+.theme--light .home .hero h2 {
+  color: #7f8790;
+}
+.theme--dark .home .hero h2 {
+  color: #8e9095;
+}
+.home .hero h2 .title-name {
+  font-weight: 900;
+  font-size: 6rem;
+  line-height: 5rem;
+}
+.theme--light .home .hero h2 .title-name {
+  color: #f5a300;
+  filter: drop-shadow(1px 1px 2px #2f2f37);
+}
+.theme--dark .home .hero h2 .title-name {
+  color: #ffaa00;
+  filter: drop-shadow(1px 1px 2px #020203);
+}
+.home .cta-section {
+  height: auto;
+  padding: 64px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #111112;
+}
+.theme--light .home .cta-section {
+  background-color: #f5a300;
+}
+.theme--dark .home .cta-section {
+  background-color: #ffaa00;
+}
+.home .cta-section .ctaContainer {
+  text-align: left;
+  width: 100%;
+}
+.home .cta-section p.customerProblem {
+  font-size: 2rem;
+  font-weight: 300;
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto 2rem 11.5%;
+}
+.home .cta-section .bigCta {
+  text-align: left;
+  margin: 0px 10%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.home .cta-section .bigCta h3 {
+  margin: 0;
+  padding: 0;
+  padding-left: 32px;
+  width: 50%;
+  min-width: 400px;
+  color: #fff;
+  font-size: 5rem;
+  border-left: 5px solid #fff;
+}
+.home .cta-section .bigCta button {
+  font-family: "Lato", sans-serif;
+  font-size: 2.2rem;
+  width: max-content;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  transition: 0.2s ease;
+  color: #577c8c;
+  background-color: #fff;
+  box-shadow: 3px 6px 0 #577c8c;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .cta-section .bigCta button .icon {
+  margin: 0px 10px;
+}
+.home .cta-section .bigCta button span {
+  max-width: 70%;
+  margin: 0px 16px;
+}
+.home .cta-section .bigCta button:hover {
+  color: #313654;
+  background-color: #e8e8e8;
+}
+.home .cta-section .bigCta button:active {
+  background-color: #d3d3d3;
+  box-shadow: 0px 0px 0px #fff;
+  transform: translateY(6px);
+}
+@media screen and (max-width: 600px) {
+  .home .cta-section .bigCta {
+    margin: 0;
+  }
+  .home .cta-section .bigCta h3 {
+    font-size: 2.5rem;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+    width: 80vw;
+  }
+  .home .cta-section .bigCta button {
+    padding: 16px;
+    font-size: 2rem;
+  }
+}
+.home .floating-icons {
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: space-around;
+  font-size: 2.5rem;
+}
+.home .floating-icons .floating-icon {
+  transform: translateY(3rem);
+  --fa-secondary-opacity: 0.7;
+}
+.home .floating-icons .floating-icon:first-child {
+  animation: 10s floatup linear 8s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:first-child {
+  color: #f5a300;
+}
+.theme--dark .home .floating-icons .floating-icon:first-child {
+  color: #ffaa00;
+}
+.home .floating-icons .floating-icon:nth-child(2) {
+  animation: 12s floatup linear 16s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(2) {
+  color: #7f8790;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(2) {
+  color: #8e9095;
+}
+.home .floating-icons .floating-icon:nth-child(3) {
+  animation: 14s floatup linear 2s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(3) {
+  color: #f0d54c;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(3) {
+  color: #ffeb85;
+}
+.home .floating-icons .floating-icon:nth-child(4) {
+  animation: 10s floatup linear 10s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(4) {
+  color: #111112;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(4) {
+  color: #f2f2f2;
+}
+.home .floating-icons .floating-icon:nth-child(5) {
+  animation: 16s floatup linear 6s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(5) {
+  color: #7f8790;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(5) {
+  color: #8e9095;
+}
+.home .floating-icons .floating-icon:nth-child(6) {
+  animation: 12s floatup linear 4s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(6) {
+  color: #f0c800;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(6) {
+  color: #ffdd33;
+}
+.home .floating-icons .floating-icon:nth-child(7) {
+  animation: 10s floatup linear 12s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(7) {
+  color: #f5a300;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(7) {
+  color: #ffaa00;
+}
+.home .floating-icons .floating-icon:nth-child(8) {
+  animation: 12s floatup linear 16s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(8) {
+  color: #111112;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(8) {
+  color: #f2f2f2;
+}
+.home .floating-icons .floating-icon:nth-child(9) {
+  animation: 14s floatup linear 8s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(9) {
+  color: #7f8790;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(9) {
+  color: #8e9095;
+}
+.home .floating-icons .floating-icon:nth-child(10) {
+  animation: 16s floatup linear 6s infinite;
+}
+.theme--light .home .floating-icons .floating-icon:nth-child(10) {
+  color: #f0d54c;
+}
+.theme--dark .home .floating-icons .floating-icon:nth-child(10) {
+  color: #ffeb85;
+}
+
+@keyframes floatup {
+  0% {
+    transform: translateY(3rem) rotate(320deg);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-1200%) rotate(20deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
