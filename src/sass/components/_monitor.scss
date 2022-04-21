@@ -5,6 +5,9 @@
     height: 100vh;
     padding: 1rem 1rem 0 1rem;
     transition: background-color .5s ease;
+    -webkit-transition: background-color .5s ease;
+    -moz-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
 
     &.theme--dark {
         background-color: $dark-contrast-light;
@@ -27,8 +30,7 @@
     border-radius: 1.2rem;
     margin-bottom: 0rem;
     box-shadow: 0.1rem 0.1rem 0.6rem #726c69;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
     background-color: #111015;
 
     @media (max-width: 600px) {
@@ -46,5 +48,25 @@
 
     @media (max-width: 900px) {
         display: none;
+    }
+}
+
+.page {
+    width: 100%;
+    height: 90.4%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: background-color .2s ease, color .2s ease;
+    -webkit-transition: background-color .2s ease, color .2s ease;
+    -moz-transition: background-color .2s ease, color .2s ease;
+    -o-transition: background-color .2s ease, color .2s ease;
+
+    @include themed() {
+        background-color: t(app-bg);
+        color: t(app-font-primary);
+    }
+
+    @media (max-width: 600px) {
+        height: 100%;
     }
 }

@@ -21,7 +21,7 @@ https://www.github.com/tabitha-r/
   font-weight: 400;
 }
 
-.url-bar button {
+.page.not-found, .url-bar button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +45,9 @@ https://www.github.com/tabitha-r/
   height: 100vh;
   padding: 1rem 1rem 0 1rem;
   transition: background-color 0.5s ease;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
 }
 .App.theme--dark {
   background-color: #ffeb85;
@@ -66,8 +69,7 @@ https://www.github.com/tabitha-r/
   border-radius: 1.2rem;
   margin-bottom: 0rem;
   box-shadow: 0.1rem 0.1rem 0.6rem #726c69;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
   background-color: #111015;
 }
 @media (max-width: 600px) {
@@ -87,6 +89,30 @@ https://www.github.com/tabitha-r/
 @media (max-width: 900px) {
   .monitor-stand {
     display: none;
+  }
+}
+
+.page {
+  width: 100%;
+  height: 90.4%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  -moz-transition: background-color 0.2s ease, color 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease;
+}
+.theme--light .page {
+  background-color: #e3e5e8;
+  color: #111112;
+}
+.theme--dark .page {
+  background-color: #212326;
+  color: #f2f2f2;
+}
+@media (max-width: 600px) {
+  .page {
+    height: 100%;
   }
 }
 
@@ -110,11 +136,6 @@ https://www.github.com/tabitha-r/
 .browser-tabs > svg {
   margin-right: 1.2rem;
 }
-@media (max-width: 610px) {
-  .browser-tabs > svg {
-    display: none;
-  }
-}
 .theme--light .browser-tabs > svg {
   fill: #f0f2f4;
   filter: drop-shadow(0px 0px 2px #a1a1a1);
@@ -136,12 +157,12 @@ https://www.github.com/tabitha-r/
   border-radius: 10px 10px 0px 0px;
   transition: 0.2s ease;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .browser-tabs .nav-tab {
     padding: 0.1rem 0.5rem 0.3rem 0.5rem;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .browser-tabs .nav-tab > span {
     display: none;
   }
@@ -149,7 +170,7 @@ https://www.github.com/tabitha-r/
 .browser-tabs .nav-tab > svg {
   transition: color 0.2s ease;
 }
-@media (max-width: 1050px) and (min-width: 600px) {
+@media (max-width: 1050px) and (min-width: 700px) {
   .browser-tabs .nav-tab > svg {
     display: none;
   }
@@ -273,6 +294,7 @@ https://www.github.com/tabitha-r/
 }
 .url-bar button:hover {
   cursor: pointer;
+  --fa-secondary-opacity: 0.6;
 }
 .theme--light .url-bar button:hover {
   background-color: #dbdee1;
@@ -392,6 +414,79 @@ https://www.github.com/tabitha-r/
 }
 .dropdown-container .menu-item > :nth-child(3) {
   margin-left: auto;
+}
+
+.page.not-found section {
+  padding: 1rem 4rem;
+  border-radius: 15px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  max-width: 95%;
+}
+.theme--light .page.not-found section em {
+  color: #7f8790;
+}
+.theme--dark .page.not-found section em {
+  color: #8e9095;
+}
+.page.not-found section button {
+  font-size: 1.3rem;
+  padding: 0.65rem 1.95rem;
+  border-radius: 15px;
+  border: none;
+  margin: 1.3rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.page.not-found section button:hover {
+  cursor: pointer;
+}
+.page.not-found section button > svg {
+  margin-right: 0.7rem;
+  --fa-secondary-opacity: 0.7;
+}
+.theme--light .page.not-found section button {
+  background-color: #ebedef;
+  box-shadow: 1px 1px 5px #2f2f37;
+  color: #7f8790;
+}
+.theme--light .page.not-found section button:hover {
+  background-color: #f5a300;
+  color: #111112;
+  box-shadow: none;
+}
+.theme--light .page.not-found section button:active {
+  box-shadow: inset 1px 1px 3px #2f2f37;
+}
+.theme--dark .page.not-found section button {
+  background-color: #282a2e;
+  box-shadow: 1px 1px 5px #020203;
+  color: #8e9095;
+}
+.theme--dark .page.not-found section button:hover {
+  background-color: #ffaa00;
+  color: #f2f2f2;
+  box-shadow: none;
+}
+.theme--dark .page.not-found section button:active {
+  box-shadow: inset 1px 1px 3px #020203;
+}
+.page.not-found section > svg {
+  font-size: 4rem;
+  --fa-secondary-opacity: 0.4;
+  margin: 1rem;
+}
+.theme--light .page.not-found section > svg {
+  color: #f5a300;
+}
+.theme--dark .page.not-found section > svg {
+  color: #ffaa00;
+}
+.theme--light .page.not-found section {
+  background-color: white;
+  box-shadow: inset 0px 0px 10px #2f2f37;
+}
+.theme--dark .page.not-found section {
+  background-color: #36393f;
+  box-shadow: inset 0px 0px 10px #020203;
 }
 
 /*# sourceMappingURL=App.css.map */

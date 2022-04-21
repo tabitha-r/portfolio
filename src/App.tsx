@@ -11,7 +11,6 @@ function App() {
         <div className="monitor">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           <Outlet />
-          <button onClick={() => setDarkMode(!darkMode)}>Mode</button>
         </div>
         <div className="monitor-stand" aria-hidden />
     </div>

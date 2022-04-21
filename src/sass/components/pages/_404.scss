@@ -1,0 +1,59 @@
+@use '../../abstracts' as *;
+
+
+.page.not-found {
+    @extend %center-in-div;
+
+    section {
+        padding: 1rem 4rem;
+        border-radius: 15px;
+        transition: background-color .2s ease, color .2s ease;
+        max-width: 95%;
+
+        em {
+            @include themed() {
+                color: t(app-font-secondary);
+            }
+        }
+
+        button {
+            @include standard-button(1.3rem);
+
+            &>svg {
+                margin-right: 0.7rem;
+                --fa-secondary-opacity: 0.7;
+            }
+
+            @include themed() {
+                background-color: t(app-fg3);
+                box-shadow: 1px 1px 5px t(app-shadow);
+                color: t(app-font-secondary);
+
+                &:hover {
+                    background-color: t(contrast-dark);
+                    color: t(app-font-primary);
+                    box-shadow: none;
+                }
+
+                &:active {
+                    box-shadow: inset 1px 1px 3px t(app-shadow);
+                }
+            }
+        }
+
+        &>svg {
+            font-size: 4rem;
+            --fa-secondary-opacity: 0.4;
+            margin: 1rem;
+
+            @include themed() {
+                color: t(contrast-dark);
+            }
+        }
+        @include themed() {
+            background-color: t(app-fg2);
+            box-shadow: inset 0px 0px 10px t(app-shadow);
+
+        }
+    }
+}

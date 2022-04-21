@@ -49,6 +49,7 @@
 
         &:hover {
             cursor: pointer;
+            --fa-secondary-opacity: 0.6;
 
             @include themed() {
                 background-color: t(browser-highlight);

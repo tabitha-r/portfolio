@@ -15,6 +15,14 @@ $themes: (
         contrast-light: $light-contrast-light,
         contrast-mid: $light-contrast-mid,
         contrast-dark: $light-contrast-dark,
+        app-bg: $app-bg-light,
+        app-fg1: $app-fg1-light,
+        app-fg2: $app-fg2-light,
+        app-fg3: $app-fg3-light,
+        app-shadow: $app-shadow-light,
+        app-highlight: $app-highlight-light,
+        app-font-primary: $app-font-primary-light,
+        app-font-secondary: $app-font-secondary-light
     ),
     dark: (
         browser-bg: $browser-bg-dark,
@@ -30,6 +38,14 @@ $themes: (
         contrast-light: $dark-contrast-light,
         contrast-mid: $dark-contrast-mid,
         contrast-dark: $dark-contrast-dark,
+        app-bg: $app-bg-dark,
+        app-fg1: $app-fg1-dark,
+        app-fg2: $app-fg2-dark,
+        app-fg3: $app-fg3-dark,
+        app-shadow: $app-shadow-dark,
+        app-highlight: $app-highlight-dark,
+        app-font-primary: $app-font-primary-dark,
+        app-font-secondary: $app-font-secondary-dark
     )
 );
 
