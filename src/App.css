@@ -6,25 +6,59 @@ https://www.tabithariley.co.uk/
 https://www.github.com/tabitha-r/
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+.App p, .App input {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+
+.App h1, .App h2, .App h3, .App h4, .App h5, .App h6 {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+
+.App code {
+  font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-weight: 400;
+}
+
+.url-bar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
   font-size: 18px;
 }
 
 .App {
   text-align: center;
 }
-
 .App {
   width: 100vw;
   height: 100vh;
   padding: 1rem 1rem 0 1rem;
+  transition: background-color 0.5s ease;
+}
+.App.theme--dark {
   background-color: #ffeb85;
 }
+.App.theme--light {
+  background-color: #f0d54c;
+}
+@media (max-width: 600px) {
+  .App {
+    padding: 0;
+  }
+}
 
-.screen {
+.monitor {
   width: 100%;
   height: 98%;
   border: 1.1rem solid #d3cfca;
@@ -36,6 +70,13 @@ https://www.github.com/tabitha-r/
   overflow-y: hidden;
   background-color: #111015;
 }
+@media (max-width: 600px) {
+  .monitor {
+    border: none;
+    height: 100%;
+    border-radius: 0;
+  }
+}
 
 .monitor-stand {
   width: 25vw;
@@ -43,11 +84,16 @@ https://www.github.com/tabitha-r/
   background-image: linear-gradient(#726c69, #d3cfca);
   margin: 0rem auto;
 }
+@media (max-width: 900px) {
+  .monitor-stand {
+    display: none;
+  }
+}
 
 .browser-tabs {
   margin: 0rem;
   width: 100%;
-  height: 2.3rem;
+  height: 1.9rem;
   text-align: left;
   padding: 0.25rem 0.5rem;
   display: flex;
@@ -61,23 +107,60 @@ https://www.github.com/tabitha-r/
 .theme--dark .browser-tabs {
   background-color: #0f0f0f;
 }
+.browser-tabs > svg {
+  margin-right: 1.2rem;
+}
+@media (max-width: 610px) {
+  .browser-tabs > svg {
+    display: none;
+  }
+}
+.theme--light .browser-tabs > svg {
+  fill: #f0f2f4;
+  filter: drop-shadow(0px 0px 2px #a1a1a1);
+}
+.theme--dark .browser-tabs > svg {
+  fill: #212121;
+  filter: drop-shadow(0px 0px 2px #151519);
+}
 .browser-tabs .nav-tab {
   justify-self: flex-start;
-  padding: 3px 20px 4px 20px;
-  margin: 1px 1px 0px 1px;
-  border-radius: 5px 5px 0px 0px;
+  padding: 0.1rem 1.7rem 0.3rem 1rem;
+  margin: 0.2rem 0.06rem 0rem 0.06rem;
   transition: 0.2s ease-in-out;
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.05rem;
   text-decoration: none;
+  border-radius: 10px 10px 0px 0px;
   transition: 0.2s ease;
+}
+@media (max-width: 600px) {
+  .browser-tabs .nav-tab {
+    padding: 0.1rem 0.5rem 0.3rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .browser-tabs .nav-tab > span {
+    display: none;
+  }
+}
+.browser-tabs .nav-tab > svg {
+  transition: color 0.2s ease;
+}
+@media (max-width: 1050px) and (min-width: 600px) {
+  .browser-tabs .nav-tab > svg {
+    display: none;
+  }
 }
 .theme--light .browser-tabs .nav-tab {
   color: #0f0f10;
+  background-color: #f0f2f4;
 }
 .theme--dark .browser-tabs .nav-tab {
-  color: #bcbdbd;
+  color: #d6d6d7;
+  background-color: #212121;
 }
 .browser-tabs .nav-tab:hover {
   cursor: pointer;
@@ -85,31 +168,230 @@ https://www.github.com/tabitha-r/
 .theme--light .browser-tabs .nav-tab:hover {
   background-color: white;
 }
+.theme--light .browser-tabs .nav-tab:hover > svg {
+  color: #f5a300;
+}
 .theme--dark .browser-tabs .nav-tab:hover {
   background-color: #303030;
 }
-
-.nav-logo {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 1rem;
+.theme--dark .browser-tabs .nav-tab:hover > svg {
+  color: #ffaa00;
+}
+.theme--light .browser-tabs .nav-tab.active-tab {
+  background-color: white;
+}
+.theme--light .browser-tabs .nav-tab.active-tab > svg {
+  color: #f5a300;
+}
+.theme--dark .browser-tabs .nav-tab.active-tab {
+  background-color: #303030;
+}
+.theme--dark .browser-tabs .nav-tab.active-tab > svg {
+  color: #ffaa00;
 }
 
 .browser-buttons {
   margin-left: auto;
 }
+@media (max-width: 900px) {
+  .browser-buttons {
+    display: none;
+  }
+}
 .browser-buttons .browser-button {
   margin: 0rem 0.2rem;
   --fa-secondary-opacity: 1;
 }
-.browser-buttons .browser-button:first-of-type {
-  color: #00cc6a;
+.theme--light .browser-buttons .browser-button:first-of-type {
+  color: #50d83b;
+  filter: drop-shadow(0px 0px 1px #a1a1a1);
 }
-.browser-buttons .browser-button:nth-of-type(2n) {
-  color: #ffb900;
+.theme--dark .browser-buttons .browser-button:first-of-type {
+  color: #4cd71d;
+  filter: drop-shadow(0px 0px 1px #151519);
 }
-.browser-buttons .browser-button:last-of-type {
-  color: #e81123;
+.theme--light .browser-buttons .browser-button:nth-of-type(2n) {
+  color: #fac83d;
+  filter: drop-shadow(0px 0px 1px #a1a1a1);
+}
+.theme--dark .browser-buttons .browser-button:nth-of-type(2n) {
+  color: #ebbe19;
+  filter: drop-shadow(0px 0px 1px #151519);
+}
+.theme--light .browser-buttons .browser-button:last-of-type {
+  color: #fc6159;
+  filter: drop-shadow(0px 0px 1px #a1a1a1);
+}
+.theme--dark .browser-buttons .browser-button:last-of-type {
+  color: #f6373a;
+  filter: drop-shadow(0px 0px 1px #151519);
+}
+
+.url-bar {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row nowrap;
+  padding: 0rem 0.5rem;
+}
+.theme--light .url-bar {
+  background-color: white;
+  color: #0f0f10;
+}
+.theme--dark .url-bar {
+  background-color: #303030;
+  color: #d6d6d7;
+}
+@media (max-width: 640px) {
+  .url-bar > :first-child {
+    margin-right: auto;
+  }
+  .url-bar > :nth-child(2) {
+    margin-left: auto;
+  }
+}
+.url-bar .browser-control-button {
+  display: inline-block;
+}
+.url-bar button {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  margin: 0rem 0.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+.theme--light .url-bar button {
+  color: #0f0f10;
+}
+.theme--dark .url-bar button {
+  color: #d6d6d7;
+}
+.url-bar button:hover {
+  cursor: pointer;
+}
+.theme--light .url-bar button:hover {
+  background-color: #dbdee1;
+  color: #f5a300;
+}
+.theme--dark .url-bar button:hover {
+  background-color: #4f4f4f;
+  color: #ffaa00;
+}
+.url-bar .faux-url {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.2s ease;
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0rem 0.1rem 0rem 0.5rem;
+  margin: auto 1rem;
+  border-radius: 10px;
+  height: 80%;
+}
+@media (max-width: 640px) {
+  .url-bar .faux-url {
+    display: none;
+  }
+}
+.url-bar .faux-url > :first-child {
+  margin-right: 0.5rem;
+}
+.url-bar .faux-url .url {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0.5rem;
+}
+.url-bar .faux-url .url-end {
+  margin-left: auto;
+}
+.url-bar .faux-url .url-end button {
+  margin: 0.2rem;
+  display: inline-block;
+}
+.url-bar .faux-url .url-end button > svg {
+  margin: 0rem 0.4rem;
+}
+@media (max-width: 900px) {
+  .url-bar .faux-url .url-end {
+    display: none;
+  }
+}
+.url-bar .faux-url h1 {
+  font-size: 1rem;
+  text-transform: lowercase;
+  word-spacing: -0.2rem;
+  font-weight: 300;
+}
+.url-bar .faux-url input[type=text] {
+  background-color: transparent;
+  font-size: 1rem;
+  border: none;
+  padding: 0.2rem 1rem 0.2rem 0rem;
+}
+.theme--light .url-bar .faux-url input[type=text] {
+  color: #0f0f10;
+}
+.theme--dark .url-bar .faux-url input[type=text] {
+  color: #d6d6d7;
+}
+@media (max-width: 900px) {
+  .url-bar .faux-url input[type=text] {
+    display: none;
+  }
+}
+.theme--light .url-bar .faux-url {
+  background-color: #f0f2f4;
+}
+.theme--dark .url-bar .faux-url {
+  background-color: #212121;
+}
+.theme--light .url-bar .faux-url:focus-within {
+  background-color: #dbdee1;
+}
+.theme--dark .url-bar .faux-url:focus-within {
+  background-color: #4f4f4f;
+}
+
+.dropdown-container {
+  position: absolute;
+  right: 3rem;
+  top: 6rem;
+  width: 300px;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+@media (max-width: 600px) {
+  .dropdown-container {
+    top: 4rem;
+    right: 1rem;
+  }
+}
+.theme--light .dropdown-container {
+  background-color: white;
+  box-shadow: 2px 2px 10px #a1a1a1;
+  color: #0f0f10;
+}
+.theme--dark .dropdown-container {
+  background-color: #262626;
+  box-shadow: 2px 2px 10px #151519;
+  color: #d6d6d7;
+}
+.dropdown-container .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+.dropdown-container .menu-item > :nth-child(3) {
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=App.css.map */

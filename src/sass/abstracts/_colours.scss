@@ -1,13 +1,7 @@
-$contrast-light: hsl(50, 100%, 76%);
-$contrast-mid: hsl(50, 100%, 60%);
-$contrast-dark: hsl(40, 100%, 50%);
-
-$browser-bg-dark: hsl(0, 0%, 6%);
-$browser-tab-dark: hsl(0, 0%, 19%);
-$browser-input-dark: hsl(0, 0%, 13%);
-$browser-menu-dark: hsl(0, 0%, 15%);
-$browser-font-dark: hsl(210, 1%, 74%);
-$browser-shadow-dark: hsl(210, 5%, 7%);
+// Light Mode
+$light-contrast-light: hsl(50, 85%, 62%);
+$light-contrast-mid: hsl(50, 100%, 47%);
+$light-contrast-dark: hsl(40, 100%, 48%);
 
 $browser-bg-light: hsl(218, 15%, 89%);
 $browser-tab-light: hsl(0, 0%, 100%);
@@ -15,3 +9,25 @@ $browser-input-light: hsl(210, 14%, 95%);
 $browser-menu-light: hsl(0, 0%, 100%);
 $browser-font-light: hsl(220, 2%, 6%);
 $browser-shadow-light: hsl(0, 0%, 63%);
+$browser-highlight-light: hsl(204, 8%, 87%);
+
+$browser-green-button-light: hsl(112, 67%, 54%);
+$browser-amber-button-light: hsl(44, 95%, 61%);
+$browser-red-button-light: hsl(3, 97%, 67%);
+
+// Dark Mode
+$dark-contrast-light: hsl(50, 100%, 76%);
+$dark-contrast-mid: hsl(50, 100%, 60%);
+$dark-contrast-dark: hsl(40, 100%, 50%);
+
+$browser-bg-dark: hsl(0, 0%, 6%);
+$browser-tab-dark: hsl(0, 0%, 19%);
+$browser-input-dark: hsl(0, 0%, 13%);
+$browser-menu-dark: hsl(0, 0%, 15%);
+$browser-font-dark: hsl(210, 1%, 84%);
+$browser-shadow-dark: hsl(240, 7%, 9%);
+$browser-highlight-dark: hsl(0, 0%, 31%);
+
+$browser-green-button-dark: hsl(105, 76%, 48%);
+$browser-amber-button-dark: hsl(47, 84%, 51%);
+$browser-red-button-dark: hsl(359, 91%, 59%);

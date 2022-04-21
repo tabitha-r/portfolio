@@ -1,18 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../../../logo.svg';
+import BrowserTab from './tab';
+import Logo from '../../media/logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/pro-duotone-svg-icons';
+import { faCircle, faHouseChimney, faPaperPlane, faFaceSmileBeam, faBrowsers } from '@fortawesome/pro-duotone-svg-icons';
 
 function NavBar() {
 
     return (
         <div className="browser-tabs">
-            <img src={logo} className="nav-logo" aria-hidden />
+            <Logo size='25' />
             <nav>
-                <NavLink to="/" className={({isActive}) => isActive ? "nav-tab active-tab" : "nav-tab"}>Home</NavLink>
-                <NavLink to="/about" className={({isActive}) => isActive ? "nav-tab active-tab" : "nav-tab"}>About</NavLink>
-                <NavLink to="/contact" className={({isActive}) => isActive ? "nav-tab active-tab" : "nav-tab"}>Contact</NavLink>
+                <BrowserTab link="/" name="Home" icon={<FontAwesomeIcon icon={faHouseChimney} fixedWidth />} />
+                <BrowserTab link="/about" name="About" icon={<FontAwesomeIcon icon={faFaceSmileBeam} fixedWidth />} />
+                <BrowserTab link="/portfolio" name="Portfolio" icon={<FontAwesomeIcon icon={faBrowsers} fixedWidth />} />
+                <BrowserTab link="/contact" name="Contact" icon={<FontAwesomeIcon icon={faPaperPlane} fixedWidth />} />
             </nav>
             <div className="browser-buttons" aria-hidden>
                 <FontAwesomeIcon icon={faCircle} className="browser-button" />

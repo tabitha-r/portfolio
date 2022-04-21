@@ -8,6 +8,13 @@ $themes: (
         browser-menu: $browser-menu-light,
         browser-font: $browser-font-light,
         browser-shadow: $browser-shadow-light,
+        browser-highlight: $browser-highlight-light,
+        browser-green: $browser-green-button-light,
+        browser-amber: $browser-amber-button-light,
+        browser-red: $browser-red-button-light,
+        contrast-light: $light-contrast-light,
+        contrast-mid: $light-contrast-mid,
+        contrast-dark: $light-contrast-dark,
     ),
     dark: (
         browser-bg: $browser-bg-dark,
@@ -16,6 +23,13 @@ $themes: (
         browser-menu: $browser-menu-dark,
         browser-font: $browser-font-dark,
         browser-shadow: $browser-shadow-dark,
+        browser-highlight: $browser-highlight-dark,
+        browser-green: $browser-green-button-dark,
+        browser-amber: $browser-amber-button-dark,
+        browser-red: $browser-red-button-dark,
+        contrast-light: $dark-contrast-light,
+        contrast-mid: $dark-contrast-mid,
+        contrast-dark: $dark-contrast-dark,
     )
 );
 

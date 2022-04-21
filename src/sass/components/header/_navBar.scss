@@ -1,0 +1,126 @@
+@use '../../abstracts' as *;
+
+.browser-tabs {
+    margin: 0rem;
+    width: 100%;
+    height: 1.9rem;
+    text-align: left;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color .2s ease;
+
+    @include themed() {
+        background-color: t(browser-bg);
+    }
+
+    &>svg {
+        margin-right: 1.2rem;
+
+        @media (max-width: 610px) {
+            display: none;
+        }
+
+        @include themed() {
+            fill: t(browser-input);
+            filter: drop-shadow(0px 0px 2px t(browser-shadow));
+        }
+        
+    }
+
+    .nav-tab {
+        justify-self: flex-start;
+        padding: .1rem 1.7rem .3rem 1rem;
+        margin: .2rem .06rem 0rem .06rem;
+        transition: .2s ease-in-out;
+        font-size: 1.1rem;
+        font-weight: 400;
+        font-family: 'Plus Jakarta Sans', $default-stack;
+        letter-spacing: 0.05rem;
+        text-decoration: none;
+        border-radius: 10px 10px 0px 0px;
+        transition: .2s ease;
+
+        @media (max-width: 600px) {
+            padding: .1rem .5rem .3rem .5rem;
+        }
+
+        &>span {
+            @media (max-width: 600px) {
+                display: none;
+            }
+        }
+
+        &>svg {
+            transition: color .2s ease;
+
+            @media (max-width: 1050px) and (min-width: 600px) {
+                display: none;
+            }
+        }
+        
+        @include themed() {
+            color: t(browser-font);
+            background-color: t(browser-input);
+        }
+
+        &:hover{
+            cursor: pointer;
+
+            @include themed() {
+                background-color: t(browser-tab);
+
+                &>svg {
+                    color: t(contrast-dark);
+                }
+            }
+
+        }
+
+        &.active-tab {
+
+            @include themed() {
+                background-color: t(browser-tab);
+
+                &>svg {
+                    color: t(contrast-dark);
+                }
+            }
+        }
+    }
+}
+
+.browser-buttons {
+    margin-left: auto;
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+
+    .browser-button {
+        margin: 0rem 0.2rem;
+        --fa-secondary-opacity: 1;
+
+        &:first-of-type {
+            @include themed() {
+                color: t(browser-green);
+                filter: drop-shadow(0px 0px 1px t(browser-shadow));
+            }
+        }
+
+        &:nth-of-type(2n) {
+            @include themed() {
+                color: t(browser-amber);
+                filter: drop-shadow(0px 0px 1px t(browser-shadow));
+            }
+        }
+
+        &:last-of-type {
+            @include themed() {
+                color: t(browser-red);
+                filter: drop-shadow(0px 0px 1px t(browser-shadow));
+            }
+        }
+    }
+}

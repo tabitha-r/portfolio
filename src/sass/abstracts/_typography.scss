@@ -1,0 +1,26 @@
+$default-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$default-mono-stack: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$body-font: 'Plus Jakarta Sans';
+$mono-font: 'Fira Code';
+
+%body-font {
+    font: {
+        family: $body-font, $default-stack;
+        weight: 300;
+    }
+}
+
+%heading-font {
+    font: {
+        family: $body-font, $default-stack;
+        weight: 700;
+    }
+}
+
+%code-font {
+    font: {
+        family: $mono-font, $default-mono-stack;
+        weight: 400;
+    }
+}
