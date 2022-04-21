@@ -12,9 +12,11 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@types/react-transition-group": "^4.4.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

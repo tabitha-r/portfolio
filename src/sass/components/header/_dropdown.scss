@@ -7,6 +7,11 @@
     width: 300px;
     padding: .5rem;
     border-radius: 15px;
+    z-index: 3;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    transition: height .2s ease;
 
     @media (max-width: 600px) {
         top: 4rem;
@@ -19,15 +24,95 @@
         color: t(browser-font);
     }
 
+    .menu {
+        width: 15rem;
+        padding: .2rem;
+        text-align: left;
+
+        a {
+            text-decoration: none;
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+
     .menu-item {
+        height: 4rem;
+        width: 15rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 100%;
-        padding: 1.5rem 1rem;
+        border-radius: 10px;
+        transition: background .3s ease;
+        padding: 0.5rem;
+        margin: .2rem;
+        
+        @extend %body-font;
 
-        &>:nth-child(3) {
+        .dropdown-icon {
+            padding: .2rem;
+            font-size: 1.5rem;
+        }
+
+        .dropdown-descriptor {
+            font-size: 0.8rem;
+            color: var(--fontsecondary);
+
+            @include themed() {
+                color: t(app-font-secondary);
+            }
+        }
+        
+        .dropdown-item-name {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .dropdown-icon-right {
+            font-size: 1.2rem;
             margin-left: auto;
+            margin-right: 6px;
+        }
+
+        &:hover {
+            .dropdown-item-name {
+                @include themed() {
+                    color: t(app-font-primary);
+
+                    .dropdown-descriptor {
+                        color: t(app-font-secondary);
+                    }
+                }
+            }
         }
     }
+}
+
+.menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: all 300ms ease;
+}
+.menu-primary-exit {
+    position: absolite;
+}
+.menu-primary-exit-active {
+    transform: translate(-110%);
+    transition: all 300ms ease;
+}
+
+.menu-secondary-enter {
+    transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+    transform: translateX(-100%);
+    transition: all 300ms ease;
+}
+.menu-secondary-exit-active {
+    transform: translateX(110%);
+    transition: all 300ms ease;
 }
