@@ -28,4 +28,13 @@
     input {
         @extend %body-font;
     }
+
+    button {
+        @extend %code-font;
+    }
+
+    
+    a {
+        text-decoration: none;   
+    }
   }
