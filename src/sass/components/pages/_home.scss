@@ -16,6 +16,11 @@
         }
     }
 
+    .parallax {
+        max-width: 96%;
+        max-height: 80%;
+    }
+
     
     section {
         width: 100%;
@@ -25,12 +30,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-flow: row nowrap;
-        transform: translateY(-21rem);
+        flex-flow: row wrap;
+        transform: translateY(-45rem);
         height: 0px;
+        padding: 0rem 1rem;
         
         .logo {
+            width: 25%;
             max-width: 95%;
+            min-width: 200px;
 
             @include themed() {
                 filter: drop-shadow(2px 2px 3px t(app-shadow));
@@ -59,9 +67,96 @@
                 }
             }
         }
+
+        @media (max-width: 1200px) {
+
+            h2 {
+                margin: 0rem auto;
+            }
+
+            .logo {
+                margin: 1rem;
+            }
+        }
+
+        @media (max-width: 1060px) {
+            .h2 {
+                width: 100%;
+            }
+            .logo {
+                margin: -3rem auto -15rem auto;
+            }
+        }
+
+        @media (max-width: 850px) {
+            h2 {
+                max-width: 90%;
+                font-size: 2.5rem;
+
+                .title-name {
+                    font-size: 5rem;
+                }
+
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                margin: -12rem auto -10rem auto;
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 280px) and (max-height: 653px) {
+            .logo {
+                margin: -2rem auto -14rem auto;
+            }
+        }
+
+        @media (max-width: 360px) and (max-height: 740px) {
+            .logo {
+                margin: -3rem auto -10rem auto;
+            }
+        }
+
+        @media (width: 768px) and (height: 1368px) {
+            .logo {
+                margin: -10rem auto -10rem auto;
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 916px) and (max-height: 540px) {
+            padding-top: 25rem;
+
+            .logo {
+                width: 20%;
+            }
+
+            h2 {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h2 {
+                max-width: 90%;
+                font-size: 2.5rem;
+
+                .title-name {
+                    font-size: 4rem;
+                    line-height: 3.2rem;
+                }
+
+            }
+
+            .logo {
+                width: 80%;
+            }
+        }
     }
 
-.cta-section {
+    .cta-section {
         @extend %body-font;
         height: auto;
         padding: 3.4rem 0rem;
@@ -174,107 +269,4 @@
         }
     }
 }
-
-    .floating-icons {
-        width: 100%;
-        height: 85%;
-        overflow: hidden;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: flex-end;
-        justify-content: space-around;
-        font-size: 2.5rem;
-
-        .floating-icon {
-            transform: translateY(3rem);
-            --fa-secondary-opacity: 0.7;
-
-            &:first-child {
-                animation: 10s floatup linear 8s infinite;
-
-                @include themed() {
-                    color: t(contrast-dark);
-                }
-            }
-            &:nth-child(2) {
-                animation: 12s floatup linear 16s infinite;
-
-                @include themed() {
-                    color: t(app-font-secondary);
-                }
-            }
-            &:nth-child(3) {
-                animation: 14s floatup linear 2s infinite;
-
-                @include themed() {
-                    color: t(contrast-light);
-                }
-            }
-            &:nth-child(4) {
-                animation: 10s floatup linear 10s infinite;
-
-                @include themed() {
-                    color: t(app-font-primary);
-                }
-            }
-            &:nth-child(5) {
-                animation: 16s floatup linear 6s infinite;
-
-                @include themed() {
-                    color: t(app-font-secondary);
-                }
-            }
-            &:nth-child(6) {
-                animation: 12s floatup linear 4s infinite;
-
-                @include themed() {
-                    color: t(contrast-mid);
-                }
-            }
-            &:nth-child(7) {
-                animation: 10s floatup linear 12s infinite;
-
-                @include themed() {
-                    color: t(contrast-dark);
-                }
-            }
-            &:nth-child(8) {
-                animation: 12s floatup linear 16s infinite;
-
-                @include themed() {
-                    color: t(app-font-primary);
-                }
-            }
-            &:nth-child(9) {
-                animation: 14s floatup linear 8s infinite;
-
-                @include themed() {
-                    color: t(app-font-secondary);
-                }
-            }
-            &:nth-child(10) {
-                animation: 16s floatup linear 6s infinite;
-
-                @include themed() {
-                    color: t(contrast-light);
-                }
-            }
-        }
-    }
-}
-
-@keyframes floatup {
-    0% {
-        transform: translateY(3rem) rotate(320deg);
-        opacity: 0.4;
-    }
-
-    40% {
-        transform: translateY(-1200%) rotate(20deg);
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
 }

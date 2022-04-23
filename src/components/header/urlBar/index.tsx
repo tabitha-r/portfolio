@@ -3,7 +3,7 @@ import ControlButtons from './controlButtons';
 import UrlInput from './input';
 import Dropdown from '../dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis } from '@fortawesome/pro-duotone-svg-icons';
+import { faBars, faBarsStaggered } from '@fortawesome/pro-duotone-svg-icons';
 
 interface UrlProps {
     darkMode: boolean;
@@ -18,7 +18,7 @@ function UrlBar(props: UrlProps) {
             <ControlButtons />
             <UrlInput />
             <button onClick={() => setDropdownOpen(!dropdownOpen)}>
-                <FontAwesomeIcon icon={faEllipsis} fixedWidth />
+                <FontAwesomeIcon icon={dropdownOpen ? faBarsStaggered : faBars} fixedWidth />
             </button>
             {dropdownOpen &&
                 <Dropdown darkMode={props.darkMode} setDarkMode={props.setDarkMode} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import FloatingIcons from './floatingIcons';
 import MainCta from './mainCta';
 import Logo from '../../media/logo';
@@ -16,10 +17,10 @@ export function Home() {
                     className="identify-menu"
                 />
             </div>
-
+            
             <FloatingIcons />
             <section className="hero">
-                <Logo className="logo" gradient size="400" />
+                <Logo className="logo" gradient />
                 <h2>
                     Hi! I'm
                     <br />
@@ -30,6 +31,7 @@ export function Home() {
             </section>
 
             <MainCta />
+
         </main>
     )
 };
