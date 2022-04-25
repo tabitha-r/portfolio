@@ -8,7 +8,7 @@ function MainCta() {
 
     return (
         <section className="cta-section">
-            <FadeIn className="cta-container">
+            <FadeIn className="cta-container" fadeDistance={100}>
                 <p className="customer-problem">You shouldn't have to fight with a builder to get the site you want.</p>
                 <div className="big-cta">
                     <h3>You should only have to ask.</h3>

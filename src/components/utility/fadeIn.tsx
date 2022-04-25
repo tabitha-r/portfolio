@@ -3,18 +3,22 @@ import { animated, useSpring } from '@react-spring/web';
 import { useOnScreen } from './onScreen';
 
 interface FadeInProps {
-    isVisible?: boolean;
-    className?: string;
-    children: React.ReactNode;
+    isVisible?: boolean,
+    className?: string,
+    onMouseEnter?: Function,
+    onMouseLeave?: Function,
+    children: React.ReactNode,
+    fadeDistance?: number
 }
 
 export function FadeIn(props: FadeInProps) {
     const ref = useRef() as React.MutableRefObject<HTMLInputElement>;
     const isVisible = useOnScreen(ref);
+    const fadeDistance = props.fadeDistance ? props.fadeDistance : 24;
 
     const styles = useSpring({
         opacity: isVisible ? 1 : 0,
-        y: isVisible ? 0 : 100
+        y: isVisible ? 0 : fadeDistance
     });
 
     return (

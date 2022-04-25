@@ -16,7 +16,7 @@ https://www.github.com/tabitha-r/
   font-weight: 700;
 }
 
-.about .skill-card h4, .App code, .App button {
+.about .skill-card h4, .about .about-carousel .category-section p, .App code, .App button {
   font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-weight: 400;
 }
@@ -419,7 +419,7 @@ https://www.github.com/tabitha-r/
   width: 300px;
   padding: 0.5rem;
   border-radius: 15px;
-  z-index: 3;
+  z-index: 50;
   display: flex;
   flex-flow: row nowrap;
   overflow: hidden;
@@ -509,10 +509,6 @@ https://www.github.com/tabitha-r/
   transition: all 300ms ease;
 }
 
-.menu-primary-exit {
-  position: absolite;
-}
-
 .menu-primary-exit-active {
   transform: translate(-110%);
   transition: all 300ms ease;
@@ -561,7 +557,7 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .page.not-found section button {
   background-color: #ebedef;
-  box-shadow: 1px 1px 5px #2f2f37;
+  box-shadow: 1px 1px 5px #9191a1;
   color: #7f8790;
 }
 .theme--light .page.not-found section button:hover {
@@ -570,7 +566,7 @@ https://www.github.com/tabitha-r/
   box-shadow: none;
 }
 .theme--light .page.not-found section button:active {
-  box-shadow: inset 1px 1px 3px #2f2f37;
+  box-shadow: inset 1px 1px 3px #9191a1;
 }
 .theme--dark .page.not-found section button {
   background-color: #282a2e;
@@ -598,7 +594,7 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .page.not-found section {
   background-color: white;
-  box-shadow: inset 0px 0px 10px #2f2f37;
+  box-shadow: inset 0px 0px 10px #9191a1;
 }
 .theme--dark .page.not-found section {
   background-color: #36393f;
@@ -616,7 +612,7 @@ https://www.github.com/tabitha-r/
 .theme--light .home .top-bar {
   background-color: white;
   color: #111112;
-  box-shadow: 0px 0px 5px #2f2f37;
+  box-shadow: 0px 0px 5px #9191a1;
 }
 .theme--dark .home .top-bar {
   background-color: #36393f;
@@ -645,7 +641,7 @@ https://www.github.com/tabitha-r/
   min-width: 200px;
 }
 .theme--light .home .hero .logo {
-  filter: drop-shadow(2px 2px 3px #2f2f37);
+  filter: drop-shadow(2px 2px 3px #9191a1);
 }
 .theme--dark .home .hero .logo {
   filter: drop-shadow(2px 2px 3px #020203);
@@ -670,7 +666,7 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .home .hero h2 .title-name {
   color: #f5a300;
-  filter: drop-shadow(1px 1px 2px #2f2f37);
+  filter: drop-shadow(1px 1px 2px #9191a1);
 }
 .theme--dark .home .hero h2 .title-name {
   color: #ffaa00;
@@ -791,7 +787,7 @@ https://www.github.com/tabitha-r/
   border-left: 0.3rem solid #fff;
 }
 .theme--light .home .cta-section .big-cta h3 {
-  filter: drop-shadow(1px 1px 3px #2f2f37);
+  filter: drop-shadow(1px 1px 3px #9191a1);
 }
 .theme--dark .home .cta-section .big-cta h3 {
   filter: drop-shadow(1px 1px 3px #020203);
@@ -808,7 +804,7 @@ https://www.github.com/tabitha-r/
   flex-flow: column nowrap;
 }
 .theme--light .home .cta-section .big-cta button {
-  box-shadow: 2px 2px 10px #2f2f37;
+  box-shadow: 2px 2px 10px #9191a1;
   background-color: white;
   color: #111112;
 }
@@ -837,7 +833,7 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .home .cta-section .big-cta button:active {
   background-color: #e3e5e8;
-  box-shadow: inset 1px 1px 3px #2f2f37;
+  box-shadow: inset 1px 1px 3px #9191a1;
 }
 .theme--dark .home .cta-section .big-cta button:active {
   background-color: #212326;
@@ -860,46 +856,119 @@ https://www.github.com/tabitha-r/
   }
 }
 
+.about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+}
+.theme--light .about {
+  background-image: linear-gradient(to left, #9191a1, #9191a1 20%, transparent 50%);
+}
+.theme--dark .about {
+  background-image: linear-gradient(to left, #020203, #020203 20%, transparent 50%);
+}
+.about h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-left: 4rem;
+}
+.about .category-choice {
+  text-align: left;
+  max-width: 800px;
+  width: max-content;
+  height: 100%;
+}
+.about .category-choice button {
+  border: none;
+  margin: 0rem;
+  width: 100%;
+  font-size: 1rem;
+  height: 10%;
+}
+.theme--light .about .category-choice button {
+  background-color: #f1f2f4;
+  color: #111112;
+  box-shadow: 2px 2px 4px #9191a1;
+}
+.theme--light .about .category-choice button:hover {
+  background-color: #e6e8ea;
+}
+.theme--dark .about .category-choice button {
+  background-color: #2f3137;
+  color: #f2f2f2;
+  box-shadow: 2px 2px 4px #020203;
+}
+.theme--dark .about .category-choice button:hover {
+  background-color: #3f434a;
+}
 .about .card-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-flow: row wrap;
+  width: 100%;
 }
 .about .skill-card {
-  min-width: 300px;
-  max-width: 420px;
-  height: 150px;
+  width: 300px;
+  height: 125px;
   margin: 1rem;
   padding: 0.1rem 1rem;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  transition: 0.2s ease;
+}
+.about .skill-card:hover {
+  transform: scale(110%);
 }
 .about .skill-card h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+.about .skill-card h4:hover {
+  cursor: default;
+}
+.about .skill-card a {
+  float: right;
+  color: inherit;
+  transition: 0.2s ease;
+  font-size: 0.9rem;
+}
+.theme--light .about .skill-card a {
+  color: #7f8790;
+}
+.theme--dark .about .skill-card a {
+  color: #8e9095;
+}
+.theme--light .about .skill-card a:hover {
+  color: #f5a300;
+}
+.theme--dark .about .skill-card a:hover {
+  color: #ffaa00;
 }
 .about .skill-card .skill-details {
   text-align: left;
+  width: 100%;
 }
 .about .skill-card .dev-icon {
-  max-height: 80%;
+  height: 80%;
   margin-right: 1rem;
   font-size: 4rem;
+  max-width: 35%;
 }
 .theme--light .about .skill-card .dev-icon {
-  filter: drop-shadow(1px 1px 3px #2f2f37);
+  filter: drop-shadow(1px 1px 2px #9191a1);
 }
 .theme--dark .about .skill-card .dev-icon {
-  filter: drop-shadow(1px 1px 3px #020203);
+  filter: drop-shadow(1px 1px 2px #020203);
 }
 .about .skill-card .skill-level {
   max-width: 100%;
 }
 .about .skill-card .skill-level .level-indicator {
   margin: 0rem 1px;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 .theme--light .about .skill-card .skill-level .level-indicator {
   color: #f5a300;
@@ -912,15 +981,19 @@ https://www.github.com/tabitha-r/
 }
 .about .skill-card .skill-description-tooltip {
   position: absolute;
-  width: 10%;
-  margin-top: 10%;
+  width: 60%;
+  height: auto;
   padding: 0.5rem;
   border-radius: 10px;
-  z-index: 3;
+  z-index: 25;
+  text-align: left;
+}
+.about .skill-card .skill-description-tooltip:hover {
+  cursor: default;
 }
 .theme--light .about .skill-card .skill-description-tooltip {
   background-color: #f1f2f4;
-  box-shadow: 2px 2px 10px #2f2f37;
+  box-shadow: 2px 2px 10px #9191a1;
 }
 .theme--dark .about .skill-card .skill-description-tooltip {
   background-color: #2f3137;
@@ -928,11 +1001,74 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .about .skill-card {
   background-color: white;
-  box-shadow: 2px 2px 10px #2f2f37;
+  box-shadow: 2px 2px 10px #9191a1;
 }
 .theme--dark .about .skill-card {
   background-color: #36393f;
   box-shadow: 2px 2px 10px #020203;
+}
+.about .about-carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.about .about-carousel .category-section {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 2rem;
+}
+.about .about-carousel .category-section section {
+  z-index: 10;
+}
+.about .about-carousel .category-section > svg {
+  margin-left: 45%;
+  max-height: 80%;
+  margin-top: -10rem;
+  opacity: 0.2;
+  float: right;
+  position: relative;
+  z-index: 0;
+}
+.about .about-carousel .category-section h3 {
+  font-size: 3rem;
+  padding-left: 3rem;
+}
+.about .about-carousel .category-section p {
+  font-size: 1.4rem;
+  padding-left: 4rem;
+}
+.about .about-carousel .category-section .card-container {
+  align-items: flex-end;
+  overflow-y: scroll;
+  z-index: 2;
+}
+.about .about-carousel .carousel-primary-enter {
+  transform: translateX(-100%);
+}
+.about .about-carousel .carousel-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 0.5s ease;
+}
+.about .about-carousel .carousel-primary-exit-active {
+  transform: translate(-100%);
+  transition: all 0.5s ease;
+}
+.about .about-carousel .carousel-secondary-enter {
+  transform: translateX(200%);
+}
+.about .about-carousel .carousel-secondary-enter-active {
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+}
+.about .about-carousel .carousel-secondary-exit-active {
+  transform: translateX(200%);
+  transition: all 0.5s ease;
 }
 
 .floating-icons {

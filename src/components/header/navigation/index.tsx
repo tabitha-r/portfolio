@@ -1,6 +1,6 @@
 import React from 'react';
 import BrowserTab from './tab';
-import Logo from '../../media/logo';
+import { Logo } from '../../media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faHouseChimney, faPaperPlane, faFaceSmileBeam, faBrowsers } from '@fortawesome/pro-duotone-svg-icons';
 

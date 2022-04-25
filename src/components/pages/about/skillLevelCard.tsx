@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { FadeIn } from '../../utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquare, faCode, faPaintbrushPencil, faBadge } from '@fortawesome/pro-duotone-svg-icons';
+import { faSquare, faCode, faPaintbrushPencil, faBadge, faArrowUpRightFromSquare } from '@fortawesome/pro-duotone-svg-icons';
 
 interface CardProps {
     shortName: string,
@@ -56,12 +57,22 @@ function SkillCard(props: CardProps) {
                     <div className="skill-level">
                         {displayLevel(props.level)}
                     </div>
-                    <a href={props.link} rel="noreferrer" target="_blank">More info</a>
+                    <a
+                      href={props.link}
+                      rel="noreferrer"
+                      target="_blank"
+                      onMouseEnter={() => setHover(false)}
+                      onMouseLeave={() => setHover(true)} 
+                    >
+                          About <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
+                    </a>
                 </div>
                 {hover &&
-                    <div className="skill-description-tooltip">
+                    <FadeIn
+                      className="skill-description-tooltip"
+                      fadeDistance={24} >
                         {props.description}
-                    </div>
+                    </FadeIn>
                 }
             </div>
     )

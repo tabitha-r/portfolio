@@ -10,7 +10,7 @@ interface LogoProps {
     className?: string;
 };
 
-function Logo(props: LogoProps) {
+export function Logo(props: LogoProps) {
     const fill = props.gradient ? 'url(#logo-grad)' : (props.fill ? props.fill : '');
     const strokeWidth = props.strokeWidth ? props.strokeWidth : '';
     const strokeColour = props.stroke ? props.stroke : '';
@@ -35,5 +35,3 @@ function Logo(props: LogoProps) {
         </svg>
     )
 };
-
-export default Logo;

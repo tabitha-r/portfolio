@@ -10,11 +10,19 @@ function UrlInput() {
     const [newPath, setNewPath] = useState('');
 
     const handleSubmit = () => {
+        let pathString = '';
+
         if (newPath.startsWith('/')) {
-            navigate(newPath);
+            pathString = newPath.toLowerCase();
+        } else {
+            pathString = `/${newPath}`.toLowerCase();
+        }
+
+        if (pathString === '/home') {
+            navigate('/');
             setNewPath('');
         } else {
-            navigate(`/${newPath}`);
+            navigate(pathString);
             setNewPath('');
         }
     }

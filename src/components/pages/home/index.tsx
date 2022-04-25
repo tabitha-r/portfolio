@@ -1,8 +1,7 @@
 import React from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import FloatingIcons from './floatingIcons';
 import MainCta from './mainCta';
-import Logo from '../../media/logo';
+import { Logo } from '../../media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTurnUp } from '@fortawesome/pro-duotone-svg-icons';
 
