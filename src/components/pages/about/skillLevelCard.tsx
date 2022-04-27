@@ -35,9 +35,9 @@ function SkillCard(props: CardProps) {
 
         for (let i = 1; i <= 10; i++) {
             if (i <= level) {
-                levelIndicator.push(<FontAwesomeIcon icon={faSquare} aria-hidden className="level-indicator filled" />);
+                levelIndicator.push(<FontAwesomeIcon key={i} icon={faSquare} aria-hidden className="level-indicator filled" />);
             } else {
-                levelIndicator.push(<FontAwesomeIcon icon={faSquare} aria-hidden className="level-indicator" />);
+                levelIndicator.push(<FontAwesomeIcon key={i} icon={faSquare} aria-hidden className="level-indicator" />);
             }
         }
 

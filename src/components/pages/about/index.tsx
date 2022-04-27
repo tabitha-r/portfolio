@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { WebDevelopmentSvg, ProudCoderSvg, CodeThinkingSvg, ReactSvg, WordpressSvg, MaintenanceSvg, VersionControlSvg, PenToolSvg, UsabilityTestingSvg } from '../../media';
 import CategoryPage from './categoryPage';
+import GeneralAbout from './generalAbout';
 import ChooseCategory from './chooseCategory';
-
-type CategoryPage = 'default' | 'basics' | 'advanced' | 'spa' | 'wordpress' | 'backend' | 'development' | 'graphic' | 'testing' | 'all';
+import Background from './background';
 
 export function About() {
     const [currentPage, setCurrentPage] = useState('default');
@@ -19,133 +18,120 @@ export function About() {
                     classNames="carousel-primary"
                     in={currentPage === 'default'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
-                    <CategoryPage
-                      name="Me"
-                      id='default'
-                      description="I r programmer"
-                      className="about-default"
-                      background={<WebDevelopmentSvg />} />
+                    <GeneralAbout />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'basics'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Web Development Basics"
                       id='basics'
                       description="The golden trio of core building blocks of the web." 
-                      className="about-basics"
-                      background={<ProudCoderSvg />} />
+                      className="about-basics" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'advanced'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Levelling Up Websites"
                       id='advanced'
                       description="Taking the core technologies up a notch." 
-                      className="about-advanced"
-                      background={<CodeThinkingSvg />} />
+                      className="about-advanced" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'spa'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Single Page Applications"
                       id='spa'
                       description="Modern web at its finest." 
-                      className="about-spa"
-                      background={<ReactSvg />} />
+                      className="about-spa" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'wordpress'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Wordpress Development"
                       id='wordpress'
                       description="The languages and technologies used by 43% of the web." 
-                      className="about-wordpress"
-                      background={<WordpressSvg />} />
+                      className="about-wordpress" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'backend'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Under the Hood"
                       id='backend'
                       description="Technologies used behind the scenes." 
-                      className="about-backend"
-                      background={<MaintenanceSvg />} />
+                      className="about-backend" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'development'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Web Development Toolkit"
                       id='development'
                       description="The tools and systems used while the project is being built." 
-                      className="about-development"
-                      background={<VersionControlSvg />} />
+                      className="about-development" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'graphic'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Graphic Design"
                       id='graphic'
                       description="Skills to help your site looks its best." 
-                      className="about-graphic"
-                      background={<PenToolSvg />} />
+                      className="about-graphic" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'testing'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="Project Testing"
                       id='testing'
                       description="Testing systems to make sure everything works as intended." 
-                      className="about-testing"
-                      background={<UsabilityTestingSvg />} />
+                      className="about-testing" />
                 </CSSTransition>
 
                 <CSSTransition
                     classNames="carousel-secondary"
                     in={currentPage === 'all'}
                     unmountOnExit
-                    timeout={500}
+                    timeout={600}
                 >
                     <CategoryPage
                       name="All"

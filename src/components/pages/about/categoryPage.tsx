@@ -6,8 +6,7 @@ interface categoryProps {
     name: string,
     description: string,
     id: string,
-    className?: string,
-    background?: JSX.Element
+    className?: string
 }
 
 function CategoryPage(props: categoryProps) {
@@ -24,7 +23,6 @@ function CategoryPage(props: categoryProps) {
                 }
                 <SkillCardContainer filter={filter} />
             </section>
-            {props.background}
         </div>
     )
 };

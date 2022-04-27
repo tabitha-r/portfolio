@@ -753,9 +753,11 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .home .cta-section {
   background-color: #f5a300;
+  box-shadow: inset 0px 2px 6px #9191a1;
 }
 .theme--dark .home .cta-section {
   background-color: #ffaa00;
+  box-shadow: inset 0px 2px 6px #020203;
 }
 .home .cta-section .cta-container {
   text-align: left;
@@ -864,9 +866,11 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .about {
   background-image: linear-gradient(to left, #9191a1, #9191a1 20%, transparent 50%);
+  background-color: #e3e5e8;
 }
 .theme--dark .about {
   background-image: linear-gradient(to left, #020203, #020203 20%, transparent 50%);
+  background-color: #212326;
 }
 .about h2 {
   font-size: 2rem;
@@ -878,6 +882,7 @@ https://www.github.com/tabitha-r/
   max-width: 800px;
   width: max-content;
   height: 100%;
+  margin-right: 1rem;
 }
 .about .category-choice button {
   border: none;
@@ -885,6 +890,11 @@ https://www.github.com/tabitha-r/
   width: 100%;
   font-size: 1rem;
   height: 10%;
+  z-index: 5;
+  padding: 0.8rem;
+}
+.about .category-choice button:hover {
+  cursor: pointer;
 }
 .theme--light .about .category-choice button {
   background-color: #f1f2f4;
@@ -1008,36 +1018,33 @@ https://www.github.com/tabitha-r/
   box-shadow: 2px 2px 10px #020203;
 }
 .about .about-carousel {
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-flow: row nowrap;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  flex-flow: column nowrap;
+  overflow: hidden;
 }
 .about .about-carousel .category-section {
-  width: 100%;
   height: 100%;
+  width: 100%;
   text-align: left;
-  padding: 2rem;
 }
 .about .about-carousel .category-section section {
+  width: 100%;
+  height: 100%;
   z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-flow: column nowrap;
+  padding: 1rem 0rem 0rem 2rem;
 }
-.about .about-carousel .category-section > svg {
-  margin-left: 45%;
-  max-height: 80%;
-  margin-top: -10rem;
-  opacity: 0.2;
-  float: right;
-  position: relative;
-  z-index: 0;
-}
-.about .about-carousel .category-section h3 {
+.about .about-carousel .category-section h3, .about .about-carousel .category-section .main-about-title {
   font-size: 3rem;
   padding-left: 3rem;
+  font-weight: 700;
 }
 .about .about-carousel .category-section p {
   font-size: 1.4rem;
@@ -1049,26 +1056,56 @@ https://www.github.com/tabitha-r/
   z-index: 2;
 }
 .about .about-carousel .carousel-primary-enter {
-  transform: translateX(-100%);
+  transform: translateY(100%);
+  opacity: 0;
 }
 .about .about-carousel .carousel-primary-enter-active {
-  transform: translateX(0%);
+  transform: translateY(0%);
+  opacity: 1;
   transition: all 0.5s ease;
 }
 .about .about-carousel .carousel-primary-exit-active {
-  transform: translate(-100%);
+  transform: translateY(100%);
   transition: all 0.5s ease;
+  opacity: 0;
 }
 .about .about-carousel .carousel-secondary-enter {
-  transform: translateX(200%);
+  transform: translateY(100%);
+  opacity: 0;
 }
 .about .about-carousel .carousel-secondary-enter-active {
-  transform: translateX(-100%);
+  transform: translateY(2%);
+  opacity: 1;
   transition: all 0.5s ease;
 }
 .about .about-carousel .carousel-secondary-exit-active {
-  transform: translateX(200%);
+  transform: translateY(100%);
+  opacity: 0;
   transition: all 0.5s ease;
+}
+.about .about-carousel .background-svg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: contain;
+  object-position: right top;
+  position: absolute;
+  padding: 3rem 0rem 3rem 3rem;
+}
+.about .about-carousel .background-svg > svg {
+  opacity: 0.2;
+  max-height: 80%;
+  object-fit: contain;
+}
+.about .about-carousel .background-svg .carousel-background-enter {
+  opacity: 0;
+}
+.about .about-carousel .background-svg .carousel-background-enter-active {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+.about .about-carousel .background-svg .carousel-background-exit-active {
+  opacity: 0;
 }
 
 .floating-icons {
