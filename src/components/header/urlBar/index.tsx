@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
+
+
 import ControlButtons from './controlButtons';
 import UrlInput from './input';
 import Dropdown from '../dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faBarsStaggered } from '@fortawesome/pro-duotone-svg-icons';
 
-interface UrlProps {
-    darkMode: boolean;
-    setDarkMode: Function;
-}
 
-function UrlBar(props: UrlProps) {
+function UrlBar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     return (
@@ -21,7 +19,7 @@ function UrlBar(props: UrlProps) {
                 <FontAwesomeIcon icon={dropdownOpen ? faBarsStaggered : faBars} fixedWidth />
             </button>
             {dropdownOpen &&
-                <Dropdown darkMode={props.darkMode} setDarkMode={props.setDarkMode} />
+                <Dropdown />
             }
         </div>
     )

@@ -54,7 +54,7 @@ const initialState: AllSkills = {
             tags: ['standard', 'interactivity', 'frontend']
         },
         sass: {
-            id: 5,
+            id: 4,
             name: 'Sass',
             fullName: 'Syntactically Awesome Style Sheets',
             link: 'https://sass-lang.com/',
@@ -64,7 +64,7 @@ const initialState: AllSkills = {
             tags: ['advanced', 'design', 'frontend']
         },
         ts: {
-            id: 6,
+            id: 5,
             name: 'TypeScript',
             link: 'https://www.typescriptlang.org/',
             level: 9,
@@ -73,7 +73,7 @@ const initialState: AllSkills = {
             tags: ['advanced', 'interactivity', 'frontend']
         },
         handlebars: {
-            id: 7,
+            id: 6,
             name: 'Handlebars',
             link: 'https://handlebarsjs.com/',
             level: 6,
@@ -82,7 +82,7 @@ const initialState: AllSkills = {
             tags: ['advanced', 'interactivity', 'frontend']
         },
         react: {
-            id: 8,
+            id: 7,
             name: 'React',
             fullName: 'ReactJS',
             link: 'https://reactjs.org/',
@@ -92,7 +92,7 @@ const initialState: AllSkills = {
             tags: ['advanced', 'spa', 'interactivity', 'frontend']
         },
         redux: {
-            id: 9,
+            id: 8,
             name: 'Redux',
             link: 'https://redux.js.org/',
             level: 8,
@@ -101,7 +101,7 @@ const initialState: AllSkills = {
             tags: ['advanced', 'spa', 'interactivity', 'data', 'frontend']
         },
         wp: {
-            id: 10,
+            id: 9,
             name: 'WordPress',
             fullName: 'WordPress.org',
             link: 'https://wordpress.org//',
@@ -111,7 +111,7 @@ const initialState: AllSkills = {
             tags: ['wordpress', 'frontend', 'backend', 'interactivity', 'data']
         },
         frontity: {
-            id: 11,
+            id: 10,
             name: 'Frontity',
             link: 'https://frontity.org/',
             level: 9,
@@ -120,7 +120,7 @@ const initialState: AllSkills = {
             tags: ['wordpress', 'spa', 'frontend', 'interactivity']
         },
         php: {
-            id: 12,
+            id: 11,
             name: 'PHP',
             fullName: 'Hypertext Preprocessor',
             link: 'https://www.php.net/',
@@ -130,7 +130,7 @@ const initialState: AllSkills = {
             tags: ['wordpress', 'backend']
         },
         node: {
-            id: 13,
+            id: 12,
             name: 'Node.js',
             link: 'https://nodejs.org/',
             level: 3,
@@ -139,7 +139,7 @@ const initialState: AllSkills = {
             tags: ['backend', 'development']
         },
         express: {
-            id: 14,
+            id: 13,
             name: 'Express',
             fullName: 'Express.js',
             link: 'https://expressjs.com',
@@ -149,7 +149,7 @@ const initialState: AllSkills = {
             tags: ['backend', 'interactivity']
         },
         postgres: {
-            id: 15,
+            id: 14,
             name: 'PostgreSQL',
             fullName: 'Postgre Structured Query Language',
             link: 'https://www.postgresql.org/',
@@ -159,7 +159,7 @@ const initialState: AllSkills = {
             tags: ['backend', 'data' ]
         },
         firebase: {
-            id: 16,
+            id: 15,
             name: 'Firebase',
             link: 'https://firebase.google.com',
             level: 3,
@@ -168,7 +168,7 @@ const initialState: AllSkills = {
             tags: ['backend', 'data', 'app']
         },
         vsc: {
-            id: 17,
+            id: 16,
             name: 'VS Code',
             fullName: 'Visual Studio Code',
             link: 'https://code.visualstudio.com/',
@@ -178,7 +178,7 @@ const initialState: AllSkills = {
             tags: ['development', 'app']
         },
         git: {
-            id: 18,
+            id: 17,
             name: 'Git',
             link: 'https://git-scm.com/',
             level: 7,
@@ -187,7 +187,7 @@ const initialState: AllSkills = {
             tags: ['development', 'vc']
         },
         gh: {
-            id: 19,
+            id: 18,
             name: 'GitHub',
             link: 'https://github.com/',
             level: 6,
@@ -196,7 +196,7 @@ const initialState: AllSkills = {
             tags: ['development', 'vc', 'documentation']
         },
         bash: {
-            id: 20,
+            id: 19,
             name: 'Bash',
             fullName: 'GNU Bourne Again SHell',
             link: 'https://www.gnu.org/software/bash',
@@ -206,7 +206,7 @@ const initialState: AllSkills = {
             tags: ['development', 'vc']
         },
         npm: {
-            id: 21,
+            id: 20,
             name: 'NPM',
             fullName: 'Node Package Manager',
             link: 'https://www.npmjs.com/',
@@ -216,7 +216,7 @@ const initialState: AllSkills = {
             tags: ['development', 'backend', 'frontend', 'spa', 'interactivity']
         },
         markdown: {
-            id: 22,
+            id: 21,
             name: 'Markdown',
             link: 'https://en.wikipedia.org/wiki/Markdown',
             level: 9,
@@ -225,7 +225,7 @@ const initialState: AllSkills = {
             tags: ['development', 'documentation', 'data']
         },
         figma: {
-            id: 23,
+            id: 22,
             name: 'Figma',
             link: 'https://www.figma.com/',
             level: 7,
@@ -234,7 +234,7 @@ const initialState: AllSkills = {
             tags: ['design', 'graphics', 'frontend', 'app', 'development']
         },
         gimp: {
-            id: 24,
+            id: 23,
             name: 'GIMP',
             fullName: 'GNU Imagine Manipulation Program',
             link: 'https://www.gimp.org/',
@@ -244,7 +244,7 @@ const initialState: AllSkills = {
             tags: ['design', 'graphics', 'frontend', 'app', 'development']
         },
         photoshop: {
-            id: 25,
+            id: 24,
             name: 'Photoshop',
             fullName: 'Adobe Photoshop',
             link: 'https://www.adobe.com/uk/products/photoshop.html',
@@ -254,7 +254,7 @@ const initialState: AllSkills = {
             tags: ['design', 'graphics', 'frontend', 'app', 'development']
         },
         inkscape: {
-            id: 26,
+            id: 25,
             name: 'Inkscape',
             link: 'https://inkscape.org/',
             level: 6,
@@ -263,7 +263,7 @@ const initialState: AllSkills = {
             tags: ['design', 'graphics', 'frontend', 'app', 'development']
         },
         illustrator: {
-            id: 27,
+            id: 26,
             name: 'Illustrator',
             fullName: 'Adobe Illustrator',
             link: 'https://www.adobe.com/uk/products/illustrator.html',

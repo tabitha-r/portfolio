@@ -24,7 +24,7 @@ function SkillCardContainer(props: cardContainerProps) {
                         level={skill.level}
                         icon={skill.icon}
                         description={skill.description}
-                        id={skill.id}
+                        key={skill.id}
                     />
                 );
             };

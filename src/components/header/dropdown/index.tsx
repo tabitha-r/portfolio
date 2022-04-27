@@ -3,15 +3,8 @@ import { CSSTransition } from 'react-transition-group';
 import MainMenu from './mainMenu';
 import LegalMenu from './legalsMenu';
 import SocialMenu from './socialsMenu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faBriefcaseBlank, faCaretRight, faCaretLeft, faSunBright, faMoonStars } from '@fortawesome/pro-duotone-svg-icons';
 
-interface DropdownProps {
-    darkMode: boolean;
-    setDarkMode: Function;
-}
-
-function Dropdown(props: DropdownProps) {
+function Dropdown() {
     const [menu, setMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(330);
 
@@ -45,8 +38,6 @@ function Dropdown(props: DropdownProps) {
             >
                 <MainMenu
                     setMenu={setMenu}
-                    setDarkMode={props.setDarkMode}
-                    darkMode={props.darkMode}
                 />
                 
             </CSSTransition>

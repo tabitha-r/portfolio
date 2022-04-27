@@ -7,27 +7,34 @@ interface chooseProps {
 function ChooseCategory(props: chooseProps) {
     const setCurrentPage = props.setCurrentPage;
 
+    // Array of all the categories, being ['page identifier', 'display name']
+    const pages = [
+        ['default', 'Back'], 
+        ['basics', 'Basics'],
+        ['advanced', 'Advanced'],
+        ['spa', 'Single Page App'],
+        ['wordpress', 'WordPress'],
+        ['backend', 'Back-End'],
+        ['development', 'Development'],
+        ['graphic', 'Graphic Design'],
+        ['testing', 'Testing'],
+        ['all', 'All']
+    ];
+
     return (
         <div className="category-choice">
-            <button onClick={() => setCurrentPage('default')}>Back</button>
-            <br />
-            <button onClick={() => setCurrentPage('basics')}>Basics</button>
-            <br />
-            <button onClick={() => setCurrentPage('advanced')}>Advanced</button>
-            <br />
-            <button onClick={() => setCurrentPage('spa')}>Single Page App</button>
-            <br />
-            <button onClick={() => setCurrentPage('wordpress')}>Wordpress</button>
-            <br />
-            <button onClick={() => setCurrentPage('backend')}>Back-End</button>
-            <br />
-            <button onClick={() => setCurrentPage('development')}>Development</button>
-            <br />
-            <button onClick={() => setCurrentPage('graphic')}>Graphic Design</button>
-            <br />
-            <button onClick={() => setCurrentPage('testing')}>Testing</button>
-            <br />
-            <button onClick={() => setCurrentPage('all')}>All</button>
+            {pages.map((page, index) => {
+                return (
+                    <>
+                        <button 
+                            onClick={() => setCurrentPage(page[0])}
+                            key={index} >
+                            {page[1]}
+                        </button>
+                        <br />
+                    </>
+                )
+            })}
         </div>
     )
 };

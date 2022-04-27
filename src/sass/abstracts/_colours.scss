@@ -3,6 +3,8 @@ $light-contrast-light: hsl(50, 85%, 62%);
 $light-contrast-mid: hsl(50, 100%, 47%);
 $light-contrast-dark: hsl(40, 100%, 48%);
 
+$app-secondary-contrast-light: hsl(180, 100%, 25%);
+
 $browser-bg-light: hsl(218, 15%, 89%);
 $browser-tab-light: hsl(0, 0%, 100%);
 $browser-input-light: hsl(210, 14%, 95%);
@@ -11,7 +13,7 @@ $browser-font-light: hsl(220, 2%, 6%);
 $browser-shadow-light: hsl(0, 0%, 63%);
 $browser-highlight-light: hsl(204, 8%, 87%);
 
-$app-bg-light: hsl(216, 10%, 90%);
+$app-bg-light: hsl(210, 10%, 88%);
 $app-fg1-light: hsl(220, 13%, 95%);
 $app-fg2-light: hsl(0, 0%, 100%);
 $app-fg3-light: hsl(210, 11%, 93%);
@@ -28,6 +30,8 @@ $browser-red-button-light: hsl(3, 97%, 67%);
 $dark-contrast-light: hsl(50, 100%, 76%);
 $dark-contrast-mid: hsl(50, 100%, 60%);
 $dark-contrast-dark: hsl(40, 100%, 50%);
+
+$app-secondary-contrast-dark: hsl(180, 100%, 30%);
 
 $browser-bg-dark: hsl(0, 0%, 6%);
 $browser-tab-dark: hsl(0, 0%, 19%);

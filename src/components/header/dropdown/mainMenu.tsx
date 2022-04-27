@@ -1,14 +1,18 @@
 import React from 'react';
+
+import { selectDarkMode, toggleDarkMode } from '../../../store/colourSchemeSlice';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faComment, faBriefcaseBlank, faSunBright, faMoonStars, faCopyright } from '@fortawesome/pro-duotone-svg-icons';
 
 interface MenuProps {
     setMenu: Function;
-    setDarkMode: Function;
-    darkMode: boolean;
 }
 
 function MainMenu(props: MenuProps) {
+    const dispatch = useAppDispatch();
+    const darkMode = useAppSelector(selectDarkMode);
 
     return (
         <div className="menu">
@@ -37,10 +41,10 @@ function MainMenu(props: MenuProps) {
                 <FontAwesomeIcon icon={faCaretRight} className="dropdown-icon-right" />
             </button>
 
-            <button className="menu-item" onClick={() => props.setDarkMode(!props.darkMode)}>
-                <FontAwesomeIcon icon={props.darkMode ? faSunBright : faMoonStars} className="dropdown-icon" />
+            <button className="menu-item" onClick={() => dispatch(toggleDarkMode())}>
+                <FontAwesomeIcon icon={darkMode ? faSunBright : faMoonStars} className="dropdown-icon" />
                 <div className="dropdown-item-name">
-                    {props.darkMode ? 'Light' : 'Dark'} Mode
+                    {darkMode ? 'Light' : 'Dark'} Mode
                     <br />
                     <span className="dropdown-descriptor">
                         Change colour scheme

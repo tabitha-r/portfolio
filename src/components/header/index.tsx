@@ -2,17 +2,13 @@ import React from 'react';
 import NavBar from './navigation';
 import UrlBar from './urlBar';
 
-interface HeaderProps {
-    darkMode: boolean;
-    setDarkMode: Function;
-}
 
-function BrowserHeader(props: HeaderProps) {
+function BrowserHeader() {
 
     return (
         <header>
             <NavBar />
-            <UrlBar darkMode={props.darkMode} setDarkMode={props.setDarkMode} />
+            <UrlBar />
         </header>
     )
 };

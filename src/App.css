@@ -131,7 +131,7 @@ https://www.github.com/tabitha-r/
   -o-transition: background-color 0.2s ease, color 0.2s ease;
 }
 .theme--light .page {
-  background-color: #e3e5e8;
+  background-color: #dde0e3;
   color: #111112;
 }
 .theme--dark .page {
@@ -834,7 +834,7 @@ https://www.github.com/tabitha-r/
   box-shadow: none;
 }
 .theme--light .home .cta-section .big-cta button:active {
-  background-color: #e3e5e8;
+  background-color: #dde0e3;
   box-shadow: inset 1px 1px 3px #9191a1;
 }
 .theme--dark .home .cta-section .big-cta button:active {
@@ -866,7 +866,7 @@ https://www.github.com/tabitha-r/
 }
 .theme--light .about {
   background-image: linear-gradient(to left, #9191a1, #9191a1 20%, transparent 50%);
-  background-color: #e3e5e8;
+  background-color: #dde0e3;
 }
 .theme--dark .about {
   background-image: linear-gradient(to left, #020203, #020203 20%, transparent 50%);
