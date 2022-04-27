@@ -10,7 +10,8 @@ interface CardProps {
     level: number,
     icon?: string,
     type?: 'design' | 'code' | 'other',
-    description?: string
+    description?: string,
+    id?: number
 }
 
 function SkillCard(props: CardProps) {
@@ -49,7 +50,8 @@ function SkillCard(props: CardProps) {
             <div
               className="skill-card"
               onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)} 
+              onMouseLeave={() => setHover(false)}
+              key={props.id} 
             >
                 {icon()}
                 <div className="skill-details">

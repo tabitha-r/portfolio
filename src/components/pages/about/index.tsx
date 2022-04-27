@@ -31,7 +31,7 @@ export function About() {
                 >
                     <CategoryPage
                       name="Web Development Basics"
-                      id='basics'
+                      id='standard'
                       description="The golden trio of core building blocks of the web." 
                       className="about-basics" />
                 </CSSTransition>

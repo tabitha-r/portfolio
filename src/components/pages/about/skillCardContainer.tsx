@@ -1,32 +1,40 @@
 import React from 'react';
-import SkillCard from './skillLevelCard';
-import { GraphicDesignSkills, DevelopmentSkills, AdvancedSkills, BasicSkills, TestingSkills, BackendSkills, WordpressSkills, SpaSkills } from './skillCategories';
 
+//Import relevant store functions
+import { selectSkills } from '../../../store/skillSlice';
+import { useAppSelector } from '../../../store/hooks';
+
+import SkillCard from './skillLevelCard';
 interface cardContainerProps {
-    filter: string,
-    setFilter?: Function
+    filter: string
 }
 
 function SkillCardContainer(props: cardContainerProps) {
+    const skills = useAppSelector(selectSkills);
+
+    function returnFilteredSkills(filter: string) {
+        let resultArr = [];
+        for (const [key, skill] of Object.entries(skills)) {
+            if (skill.tags.includes(filter) || !filter) {
+                resultArr.push(
+                    <SkillCard 
+                        shortName={skill.name}
+                        fullName={skill.fullName}
+                        link={skill.link}
+                        level={skill.level}
+                        icon={skill.icon}
+                        description={skill.description}
+                        id={skill.id}
+                    />
+                );
+            };
+        };
+        return resultArr;
+    };
 
     return (
         <div className="card-container">
-            {(props.filter === '' || props.filter === 'basics') &&
-            <BasicSkills /> }
-            {(props.filter === '' || props.filter === 'advanced') &&
-            <AdvancedSkills /> }
-            {(props.filter === '' || props.filter === 'spa') &&
-            <SpaSkills /> }
-            {(props.filter === '' || props.filter === 'wordpress') &&
-            <WordpressSkills /> }
-            {(props.filter === '' || props.filter === 'backend') &&
-            <BackendSkills /> }
-            {(props.filter === '' || props.filter === 'development') &&
-            <DevelopmentSkills /> }
-            {(props.filter === '' || props.filter === 'graphic') &&
-            <GraphicDesignSkills /> }
-            {(props.filter === '' || props.filter === 'testing') &&
-            <TestingSkills /> }
+            {returnFilteredSkills(props.filter)}
         </div>
     )
 };

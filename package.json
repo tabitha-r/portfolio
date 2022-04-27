@@ -14,10 +14,13 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@react-spring/parallax": "^10.0.0-alpha.1",
     "@react-spring/web": "^10.0.0-alpha.1",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@types/react-redux": "^7.1.24",
     "@types/react-transition-group": "^4.4.4",
     "dayjs": "^1.11.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-transition-group": "^4.4.2"
   },

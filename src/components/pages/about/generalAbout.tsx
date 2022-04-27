@@ -1,12 +1,14 @@
 import React from 'react';
+
+// Import dayjs package to format dates
 import dayjs from 'dayjs';
 
 function GeneralAbout() {
-    const today = new Date();
-    const currentDate = dayjs(today);
+
+    // Determine day difference between current date and study start date 
+    const currentDate = dayjs();
     const startDate = dayjs('2021-08-23');
     const daysSince = currentDate.diff(startDate, 'day');
-
 
     return (
         <div className="category-section">
