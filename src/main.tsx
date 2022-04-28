@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 
 // Import Redux store
-import { store } from './store/store';
+import { store } from './store';
 import { Provider } from 'react-redux';
 
 // Import Routes

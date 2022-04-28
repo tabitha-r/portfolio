@@ -2,8 +2,12 @@
 - - -
 Web Developer Portfolio Site
 Built by Tabitha Riley
+- - -
 https://www.tabithariley.co.uk/
 https://www.github.com/tabitha-r/
+- - -
+CSS compiled using Sass
+https://sass-lang.com/
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 .home .cta-section, .dropdown-container .menu-item, .App p, .App input {
@@ -57,7 +61,7 @@ https://www.github.com/tabitha-r/
   background-color: #ffeb85;
 }
 .App.theme--light {
-  background-color: #f0d54c;
+  background-color: #efd44d;
 }
 @media (max-width: 600px) {
   .App {
@@ -883,6 +887,10 @@ https://www.github.com/tabitha-r/
   width: max-content;
   height: 100%;
   margin-right: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
 }
 .about .category-choice button {
   border: none;
@@ -1144,7 +1152,7 @@ https://www.github.com/tabitha-r/
   animation: 14s floatup linear 2s infinite;
 }
 .theme--light .floating-icons .floating-icon:nth-child(3) {
-  color: #f0d54c;
+  color: #efd44d;
 }
 .theme--dark .floating-icons .floating-icon:nth-child(3) {
   color: #ffeb85;
@@ -1207,7 +1215,7 @@ https://www.github.com/tabitha-r/
   animation: 16s floatup linear 6s infinite;
 }
 .theme--light .floating-icons .floating-icon:nth-child(10) {
-  color: #f0d54c;
+  color: #efd44d;
 }
 .theme--dark .floating-icons .floating-icon:nth-child(10) {
   color: #ffeb85;

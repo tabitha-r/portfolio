@@ -1,6 +1,10 @@
 import React from 'react';
-import { FadeIn } from '../../utility';
 import { Link } from 'react-router-dom';
+
+// Import react-spring fade in animation
+import { FadeIn } from '../../utility';
+
+// Import media
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/pro-duotone-svg-icons';
 

@@ -1,10 +1,12 @@
 import React from 'react';
 
+// Define prop types
 interface chooseProps {
     setCurrentPage: Function
 };
 
 function ChooseCategory(props: chooseProps) {
+    // Set prop function to new function to use without props prefix
     const setCurrentPage = props.setCurrentPage;
 
     // Array of all the categories, being ['page identifier', 'display name']
@@ -25,14 +27,11 @@ function ChooseCategory(props: chooseProps) {
         <div className="category-choice">
             {pages.map((page, index) => {
                 return (
-                    <>
                         <button 
                             onClick={() => setCurrentPage(page[0])}
-                            key={index} >
+                            key={`categorybutton-${index}`} >
                             {page[1]}
                         </button>
-                        <br />
-                    </>
                 )
             })}
         </div>

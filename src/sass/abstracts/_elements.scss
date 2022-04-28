@@ -1,6 +1,9 @@
 @use './theme';
 @use './typography';
 
+// Repeating element mixins and placeholders
+
+// Normal buttons, changes size depending on supplied font-size param, default 1rem
 @mixin standard-button($font: 1rem) {
     font-size: $font;
     padding: calc($font / 2) calc($font * 1.5);

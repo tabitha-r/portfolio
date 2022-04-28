@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+
+// Import components
 import CategoryPage from './categoryPage';
 import GeneralAbout from './generalAbout';
 import ChooseCategory from './chooseCategory';
+import FilterControls from './filterControls';
 import Background from './background';
 
 export function About() {
+    // Set state for current 'page' to show
     const [currentPage, setCurrentPage] = useState('default');
 
+    // Uses react transition group CSSTransitions to display different 'page' within the about page
     return (
         <main className="page about">
             <ChooseCategory setCurrentPage={setCurrentPage} />
@@ -97,7 +102,7 @@ export function About() {
                     <CategoryPage
                       name="Web Development Toolkit"
                       id='development'
-                      description="The tools and systems used while the project is being built." 
+                      description="The tools I use while the project is being built." 
                       className="about-development" />
                 </CSSTransition>
 
@@ -109,7 +114,7 @@ export function About() {
                 >
                     <CategoryPage
                       name="Graphic Design"
-                      id='graphic'
+                      id='graphics'
                       description="Skills to help your site looks its best." 
                       className="about-graphic" />
                 </CSSTransition>
@@ -133,11 +138,7 @@ export function About() {
                     unmountOnExit
                     timeout={600}
                 >
-                    <CategoryPage
-                      name="All"
-                      id=''
-                      description="" 
-                      className="about-all" />
+                    <FilterControls />
                 </CSSTransition>
 
             </div>

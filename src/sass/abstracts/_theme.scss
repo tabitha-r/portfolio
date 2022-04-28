@@ -1,5 +1,6 @@
 @use './colours' as *;
 
+// Light and dark theme collections
 $themes: (
     light: (
         browser-bg: $browser-bg-light,
@@ -51,6 +52,10 @@ $themes: (
     )
 );
 
+// Mixin maps over the above theme and applies depending on active theme
+// Active theme is determined through .theme--{theme} class on body
+// Use by @include themed() on selector
+// Within mixin use t(variable-name) to use relevant colour
 @mixin themed() {
     @each $theme, $map in $themes {
       .theme--#{$theme} & {

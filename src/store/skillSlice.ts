@@ -287,7 +287,7 @@ const initialState: AllSkills = {
             link: 'https://mochajs.org/',
             level: 6,
             icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mocha/mocha-plain.svg',
-            description: '',
+            description: 'A testing framework for JavaScript.',
             tags: ['testing', 'development']
         }, 
     },

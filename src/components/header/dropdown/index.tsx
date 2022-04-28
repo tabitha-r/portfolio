@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+
+// Import relevant menus
 import MainMenu from './mainMenu';
 import LegalMenu from './legalsMenu';
 import SocialMenu from './socialsMenu';
 
-function Dropdown() {
+// Define prop types to include dropdown control
+interface DropdownProps {
+    dropdownOpen: boolean,
+    setDropdownOpen: Function
+}
+
+function Dropdown(props: DropdownProps) {
     const [menu, setMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(330);
 
+    // Change menu height for smooth transition
     function calcHeight(el: any) {
         switch (menu) {
             case 'main':
@@ -21,7 +30,7 @@ function Dropdown() {
             break;
 
         }
-    }
+    };
 
     return (
         <div 
@@ -49,7 +58,7 @@ function Dropdown() {
                 classNames="menu-secondary"
                 onEnter={calcHeight}
             >
-                <SocialMenu setMenu={setMenu} />
+                <SocialMenu setMenu={setMenu} setDropdownOpen={props.setDropdownOpen} />
 
             </CSSTransition>
 
@@ -60,7 +69,7 @@ function Dropdown() {
                 classNames="menu-secondary"
                 onEnter={calcHeight}
             >
-                <LegalMenu setMenu={setMenu} />
+                <LegalMenu setMenu={setMenu} setDropdownOpen={props.setDropdownOpen} />
 
             </CSSTransition>
 

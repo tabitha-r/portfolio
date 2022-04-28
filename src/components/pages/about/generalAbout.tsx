@@ -4,10 +4,11 @@ import React from 'react';
 import dayjs from 'dayjs';
 
 function GeneralAbout() {
-
-    // Determine day difference between current date and study start date 
+    // Set current date
     const currentDate = dayjs();
+    // Set date started studying (23/8/21)
     const startDate = dayjs('2021-08-23');
+    // Determine day difference between current date and study start date 
     const daysSince = currentDate.diff(startDate, 'day');
 
     return (

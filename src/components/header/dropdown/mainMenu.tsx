@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faComment, faBriefcaseBlank, faSunBright, faMoonStars, faCopyright } from '@fortawesome/pro-duotone-svg-icons';
 
 interface MenuProps {
-    setMenu: Function;
+    setMenu: Function,
 }
 
 function MainMenu(props: MenuProps) {

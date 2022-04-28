@@ -1,11 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// Import media
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft, faAnglesRight, faHouseChimneyBlank, faArrowRotateRight } from '@fortawesome/pro-duotone-svg-icons';
 
 function ControlButtons() {
+    // Make navigate function accessible from hook
     const navigate = useNavigate();
 
+    // Create four buttons to mimic browser back/forward/refresh/home buttons
     return (
         <div className="browser-control-buttons">
             <button 

@@ -25,6 +25,10 @@
         width: max-content;
         height: 100%;
         margin-right: 1rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
         
         button {
             border: none;

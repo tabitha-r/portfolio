@@ -1,13 +1,31 @@
 import React from 'react';
+
+// Import media
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faArrowUpRightFromSquare } from '@fortawesome/pro-duotone-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+// Define prop types
 interface MenuProps {
-    setMenu: Function;
+    setMenu: Function,
+    setDropdownOpen: Function
 }
 
 function SocialMenu(props: MenuProps) {
+
+    // Array of all social media links to map later
+    const socialLinks = [
+        {
+            name: 'LinkedIn',
+            icon: faLinkedin,
+            link: 'https://www.linkedin.com/in/tabitha-r-a27827214/'
+        },
+        {
+            name: 'GitHub',
+            icon: faGithub,
+            link: 'https://github.com/tabitha-r'
+        },
+    ];
 
     return (
         <div className="menu">
@@ -21,27 +39,19 @@ function SocialMenu(props: MenuProps) {
                 </div>
             </button>
 
-            <a href="https://www.linkedin.com/in/tabitha-r-a27827214/" target="_blank" rel="noreferrer">
-                <button className="menu-item">
-                    <FontAwesomeIcon icon={faLinkedin} className="dropdown-icon" />
-                        <div className='dropdown-item-name'>
-                            LinkedIn
-                        </div>
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="dropdown-icon-right" title="Link will open in new tab" />
-                </button>
-            </a>
-
-            <a href="https://github.com/tabitha-r" target="_blank" rel="noreferrer">
-                <button className="menu-item">
-                    <FontAwesomeIcon icon={faGithub} className="dropdown-icon" />
-                        <div className='dropdown-item-name'>
-                            GitHub
-                        </div>
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="dropdown-icon-right" title="Link will open in new tab" />
-                </button>
-            </a>
+            {socialLinks.map((link, index) => {
+                return (
+                    <a href={link.link} target="_blank" rel="noreferrer" key={`sociallink-${index}`}>
+                        <button className="menu-item" onClick={() => props.setDropdownOpen(false)}>
+                            <FontAwesomeIcon icon={link.icon} className="dropdown-icon" />
+                                <div className='dropdown-item-name'>
+                                    {link.name}
+                                </div>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="dropdown-icon-right" title="Link will open in new tab" />
+                        </button>
+                    </a>
+            )})}
         </div>
-
     )
 };
 

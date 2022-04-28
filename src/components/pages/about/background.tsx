@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { DesignerLifeSvg, WebDevelopmentSvg, ProudCoderSvg, CodeThinkingSvg, ReactSvg, WordpressSvg, MaintenanceSvg, VersionControlSvg, PenToolSvg, UsabilityTestingSvg } from '../../media';
 
+// Import media
+import { 
+    DesignerLifeSvg, 
+    WebDevelopmentSvg, 
+    ProudCoderSvg, 
+    CodeThinkingSvg, 
+    ReactSvg, 
+    WordpressSvg, 
+    MaintenanceSvg, 
+    VersionControlSvg, 
+    PenToolSvg, 
+    UsabilityTestingSvg } from '../../media';
+
+// Define prop types
 interface backgroundProps {
     page: string;
 }
@@ -9,6 +22,7 @@ interface backgroundProps {
 function Background(props: backgroundProps) {
     const [currentPage, setCurrentPage] = useState(props.page);
 
+    // Updates the current page whenever the props update
     useEffect(() => {
         setCurrentPage(props.page);
     }, [props.page]);

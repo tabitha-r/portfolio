@@ -1,3 +1,4 @@
+// Export all SVGs from here for easier imports elsewhere
 export { Logo } from './logo';
 export { VersionControlSvg } from './undraw_version_control';
 export { ReactSvg } from './undraw_react';

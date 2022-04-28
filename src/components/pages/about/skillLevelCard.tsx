@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+
+// Import fade in React Spring effect
 import { FadeIn } from '../../utility';
+
+// Import media
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare, faCode, faPaintbrushPencil, faBadge, faArrowUpRightFromSquare } from '@fortawesome/pro-duotone-svg-icons';
 
+// Define components props types
 interface CardProps {
     shortName: string,
     fullName?: string,
@@ -17,6 +22,9 @@ interface CardProps {
 function SkillCard(props: CardProps) {
     const [hover, setHover] = useState(false);
 
+    // Determine which icon should be shown
+    // Sets to generic icon if one is not provided but
+    // requires a 'type' prop to be passed, otherwise nothing shown
     const icon = () => {
         if (!props.icon && props.type === 'design') {
             return <FontAwesomeIcon icon={faPaintbrushPencil} aria-hidden className="dev-icon" />
@@ -31,17 +39,25 @@ function SkillCard(props: CardProps) {
         }
     };
 
+    // Function to display level on meter out of ten
+    // Level is number <= 10
     const displayLevel = (level: number) => {
+        // Define a result array for pushing levels of the meter to
         let levelIndicator = [];
 
+        // Iterates 10 times, for each level of the meter
         for (let i = 1; i <= 10; i++) {
+            // Checks if the skill level is still equal to current meter level
             if (i <= level) {
+                // If true, meter level square is filled
                 levelIndicator.push(<FontAwesomeIcon key={i} icon={faSquare} aria-hidden className="level-indicator filled" />);
             } else {
+                // If false, meter level square is not filled
                 levelIndicator.push(<FontAwesomeIcon key={i} icon={faSquare} aria-hidden className="level-indicator" />);
             }
         }
 
+        // Returns resulting array of 10 squares filled up to skill level
         return levelIndicator;
     };
         

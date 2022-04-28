@@ -1,21 +1,25 @@
 import React from 'react';
 import { useTrail, a } from '@react-spring/web';
 
+// Define prop types
 interface textTrailProps {
     open: boolean;
     children: React.ReactNode,
     className?: string
 }
 
+// from react-spring and haven't implemented properly yet
+
 export function TextTrail(props: textTrailProps) {
-  const items = React.Children.toArray(props.children)
+  const items = React.Children.toArray(props.children);
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: props.open ? 1 : 0,
     x: props.open ? 0 : 20,
     height: props.open ? 110 : 0,
     from: { opacity: 0, x: 20, height: 0 },
-  })
+  });
+
   return (
     <div>
       {trail.map(({ height, ...style }, index) => (

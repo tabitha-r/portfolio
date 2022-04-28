@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Import dark mode functions
-import { selectDarkMode, setDarkMode, setLightMode } from './store/colourSchemeSlice';
-import { useAppSelector, useAppDispatch } from './store/hooks';
+import { selectDarkMode, setDarkMode, setLightMode, useAppSelector, useAppDispatch } from './store';
 
 // Import used components and CSS
 import Header from './components/header';

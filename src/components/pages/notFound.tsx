@@ -1,9 +1,12 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+// Import media
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceMonocle, faPersonToPortal } from '@fortawesome/pro-duotone-svg-icons';
 
 export function NotFound() {
+    // Make location and navigate functions available from hooks
     const location = useLocation();
     const navigate = useNavigate();
 
