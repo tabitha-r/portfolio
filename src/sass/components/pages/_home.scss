@@ -50,7 +50,8 @@
             text-align: left;
             font-weight: 600;
             margin-left: 2rem;
-            line-height: 2.8rem;
+            line-height: 0rem;
+            transform: translateY(3rem);
 
             @include themed() {
                 color: t(app-font-secondary);
@@ -59,7 +60,7 @@
             .title-name {
                 font-weight: 900;
                 font-size: 6rem;
-                line-height: 5rem;
+                line-height: 0.2rem;
 
                 @include themed() {
                     color: t(contrast-dark);

@@ -26,11 +26,7 @@ function FilterControls() {
     ];
 
     const handleSelection = (tag: string) => {
-        let newFilters: string[] = [];
-
-        if (selectedFilters[0] !== '') {
-            newFilters = selectedFilters;
-        };
+        let newFilters: string[] = [''];
 
         if (newFilters.includes(tag)) {
             newFilters = newFilters.filter((value) => {
@@ -49,17 +45,15 @@ function FilterControls() {
                 <p>Filter:</p>
                 {filters.map((filter, index) => {
                     return (
-                    <div className="filter-checkbox" 
-                    key={`filterbutton-${index}`}>
-                        <input
-                            type="checkbox" 
-                            id={filter[0]}
-                            name={filter[0]}
-                            className="filter-checkbox" 
-                            onClick={() => handleSelection(filter[0])}
-                        />
-                            <label htmlFor={filter[0]}>{filter[1]}</label>
-                    </div>
+                    <button 
+                        id={filter[0]}
+                        name={filter[0]}
+                        className="filter-checkbox" 
+                        onClick={() => handleSelection(filter[0])}
+                        key={`filterbutton-${index}`}
+                    >
+                        {filter[1]}
+                    </button>
                 )})}
             </div>
             <section>

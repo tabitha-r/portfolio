@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Import dark mode from store
 import { selectDarkMode, useAppSelector } from '../../../store';
@@ -6,6 +6,7 @@ import { selectDarkMode, useAppSelector } from '../../../store';
 // Import components
 import FloatingIcons from './floatingIcons';
 import MainCta from './mainCta';
+import { TextTrail } from '../../utility';
 
 // Import media
 import { Logo } from '../../media';
@@ -15,6 +16,9 @@ import { faArrowTurnUp } from '@fortawesome/pro-duotone-svg-icons';
 export function Home() {
     // Make dark mode boolean selectable
     const darkMode = useAppSelector(selectDarkMode);
+
+    // Make state for text trail animation
+    const [start, setStart] = useState(true);
 
     return (
         <main className="page home">
@@ -30,11 +34,11 @@ export function Home() {
             <section className="hero">
                 <Logo className="logo" gradient />
                 <h2>
-                    Hi! I'm
-                    <br />
-                    <span className="title-name">Tabitha Riley</span>
-                    <br />
-                    and I make websites
+                    <TextTrail>
+                        <span>Hi! I'm</span>
+                        <span className="title-name">Tabitha Riley</span>
+                        <span>and I make websites</span>
+                    </TextTrail>
                 </h2>
             </section>
 
