@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Import dark mode checking
+import { selectDarkMode, useAppSelector } from '../../../store';
+
 // Import fade in React Spring effect
 import { FadeIn } from '../../utility';
 
@@ -14,12 +17,17 @@ interface CardProps {
     link: string,
     level: number,
     icon?: string,
+    darkModeIcon?: boolean,
     type?: 'design' | 'code' | 'other',
     description?: string,
     key?: number
 }
 
 function SkillCard(props: CardProps) {
+    // Make dark mode accessible
+    const darkMode = useAppSelector(selectDarkMode);
+
+    // Create state for card hovering to show description
     const [hover, setHover] = useState(false);
 
     // Determine which icon should be shown
@@ -33,7 +41,7 @@ function SkillCard(props: CardProps) {
         } else if (!props.icon && props.type === 'other') {
             return <FontAwesomeIcon icon={faBadge} aria-hidden className="dev-icon" />
         } else if (props.icon) {
-            return <img src={props.icon} alt={`${props.shortName} icon`} className="dev-icon" />
+            return <img src={props.icon} alt={`${props.shortName} icon`} className={darkMode ? (props.darkModeIcon ? "dev-icon icon-darkmode" : "dev-icon" ) : "dev-icon"} />
         } else {
             return null;
         }

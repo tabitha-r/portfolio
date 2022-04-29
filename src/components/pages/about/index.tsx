@@ -79,8 +79,8 @@ export function About() {
                 { currentPage === 'all' &&
                 <FilterControls />}
 
-
-            </div>
+              </div>
+              <Background page={currentPage} />
         </main>
     )
 };

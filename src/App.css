@@ -20,7 +20,7 @@ https://sass-lang.com/
   font-weight: 700;
 }
 
-.about .skill-card h4, .about .about-carousel .category-section p, .App code, .App button {
+.about .skill-card h4, .about .about-carousel .category-section p, .about .about-carousel .category-section .filter-controls .filter-checkbox label, .App code, .App button {
   font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-weight: 400;
 }
@@ -870,11 +870,11 @@ https://sass-lang.com/
   flex-flow: row nowrap;
 }
 .theme--light .about {
-  background-image: linear-gradient(to left, #9191a1, #9191a1 20%, transparent 50%);
+  background-image: linear-gradient(0.87turn, rgba(0, 128, 128, 0.4), transparent 50%);
   background-color: #dde0e3;
 }
 .theme--dark .about {
-  background-image: linear-gradient(to left, #020203, #020203 20%, transparent 50%);
+  background-image: linear-gradient(0.87turn, rgba(0, 153, 153, 0.4), transparent 50%);
   background-color: #212326;
 }
 .about h2 {
@@ -982,6 +982,9 @@ https://sass-lang.com/
 .theme--dark .about .skill-card .dev-icon {
   filter: drop-shadow(1px 1px 2px #020203);
 }
+.about .skill-card .dev-icon.icon-darkmode > svg {
+  filter: brightness(100%);
+}
 .about .skill-card .skill-level {
   max-width: 100%;
 }
@@ -1034,6 +1037,7 @@ https://sass-lang.com/
   justify-content: flex-start;
   flex-flow: column nowrap;
   overflow: hidden;
+  z-index: 3;
 }
 .about .about-carousel .category-section {
   height: 100%;
@@ -1063,58 +1067,150 @@ https://sass-lang.com/
   align-items: flex-end;
   overflow-y: scroll;
   z-index: 2;
+  max-height: 500px;
 }
-.about .about-carousel .carousel-primary-enter {
-  transform: translateY(100%);
-  opacity: 0;
+.about .about-carousel .category-section .filter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
 }
-.about .about-carousel .carousel-primary-enter-active {
-  transform: translateY(0%);
-  opacity: 1;
-  transition: all 0.5s ease;
+.about .about-carousel .category-section .filter-controls .filter-checkbox {
+  margin: 0.2rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
 }
-.about .about-carousel .carousel-primary-exit-active {
-  transform: translateY(100%);
-  transition: all 0.5s ease;
-  opacity: 0;
+.about .about-carousel .category-section .filter-controls .filter-checkbox label {
+  margin-left: 0.2rem;
+  font-size: 1rem;
 }
-.about .about-carousel .carousel-secondary-enter {
-  transform: translateY(100%);
-  opacity: 0;
-}
-.about .about-carousel .carousel-secondary-enter-active {
-  transform: translateY(2%);
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-.about .about-carousel .carousel-secondary-exit-active {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-.about .about-carousel .background-svg {
-  width: 100%;
-  height: 100%;
+.about .about-carousel .category-section .filter-controls .filter-checkbox input {
+  --duration: .5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  outline: none;
+  cursor: pointer;
+  position: relative;
   overflow: hidden;
-  object-fit: contain;
-  object-position: right top;
+  transform-style: preserve-3d;
+  perspective: 240px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border: 4px solid var(--primary);
+  background-size: 300% 300%;
+  transition: transform 0.3s;
+  transform: scale(var(--scale, 1)) translateZ(0);
+  animation: var(--name, unchecked) var(--duration) ease forwards;
+}
+.about .about-carousel .category-section .filter-controls .filter-checkbox input.theme--light {
+  --primary: hsl(240, 3%, 7%);
+  --secondary: hsl(220, 13%, 95%);
+}
+.about .about-carousel .category-section .filter-controls .filter-checkbox input.theme--dark {
+  --primary: hsl(0, 0%, 95%);
+  --secondary: hsl(223, 7%, 20%);
+}
+.about .about-carousel .category-section .filter-controls .filter-checkbox input:before, .about .about-carousel .category-section .filter-controls .filter-checkbox input:after {
+  content: "";
   position: absolute;
-  padding: 3rem 0rem 3rem 3rem;
+  width: 16px;
+  height: var(--height, 16px);
+  left: 6px;
+  top: var(--top, 6px);
+  background: var(--background, var(--primary));
+  animation: var(--name-icon-b, var(--name-icon, unchecked-icon)) var(--duration) ease forwards;
 }
-.about .about-carousel .background-svg > svg {
-  opacity: 0.2;
-  max-height: 80%;
-  object-fit: contain;
+.about .about-carousel .category-section .filter-controls .filter-checkbox input:before {
+  clip-path: polygon(0 6px, 6px 6px, 6px 0, 10px 0, 10px 6px, 16px 6px, 16px 10px, 10px 10px, 10px 16px, 6px 16px, 6px 10px, 0 10px);
 }
-.about .about-carousel .background-svg .carousel-background-enter {
+.about .about-carousel .category-section .filter-controls .filter-checkbox input:after {
+  --height: 4px;
+  --top: 12px;
+  --background: var(--secondary);
+  --name-icon-b: var(--name-icon-a, checked-icon);
+}
+.about .about-carousel .category-section .filter-controls .filter-checkbox input:active {
+  --scale: .95;
+}
+.about .about-carousel .category-section .filter-controls .filter-checkbox input:checked {
+  --name: checked;
+  --name-icon-b: checked-icon;
+  --name-icon-a: unchecked-icon;
+}
+@keyframes checked-icon {
+  from {
+    transform: translateZ(12px);
+  }
+  to {
+    transform: translateX(16px) rotateY(90deg) translateZ(12px);
+  }
+}
+@keyframes unchecked-icon {
+  from {
+    transform: translateX(-16px) rotateY(-90deg) translateZ(12px);
+  }
+  to {
+    transform: translateZ(12px);
+  }
+}
+@keyframes checked {
+  from {
+    background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+    background-position: 100% 50%;
+  }
+  to {
+    background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+    background-position: 50% 50%;
+  }
+}
+@keyframes unchecked {
+  from {
+    background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+    background-position: 100% 50%;
+  }
+  to {
+    background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+    background-position: 50% 50%;
+  }
+}
+.about .background-svg {
+  width: 90%;
+  height: 80%;
+  overflow: hidden;
+  position: absolute;
+  padding: 3rem;
+  z-index: 0;
+}
+.about .background-svg > svg {
+  opacity: 0.4;
+  height: 600px;
+  max-width: 700px;
+  position: absolute;
+}
+.theme--light .about .background-svg > svg {
+  filter: drop-shadow(2px 2px 6px #9191a1);
+}
+.theme--dark .about .background-svg > svg {
+  filter: drop-shadow(2px 2px 6px #020203);
+}
+.about .background-svg .carousel-background-enter {
   opacity: 0;
+  transform: translatex(20%);
 }
-.about .about-carousel .background-svg .carousel-background-enter-active {
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
+.about .background-svg .carousel-background-enter-active {
+  opacity: 0.4;
+  transition: 1s ease;
+  transform: translatex(0%);
 }
-.about .about-carousel .background-svg .carousel-background-exit-active {
+.about .background-svg .carousel-background-exit-active {
   opacity: 0;
+  transform: translatex(20%);
 }
 
 .floating-icons {

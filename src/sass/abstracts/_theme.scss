@@ -24,7 +24,8 @@ $themes: (
         app-highlight: $app-highlight-light,
         app-font-primary: $app-font-primary-light,
         app-font-secondary: $app-font-secondary-light,
-        app-contrast-secondary: $app-secondary-contrast-light
+        app-contrast-secondary: $app-secondary-contrast-light,
+        app-gradient: $app-secondary-transparency-light,
     ),
     dark: (
         browser-bg: $browser-bg-dark,
@@ -48,7 +49,8 @@ $themes: (
         app-highlight: $app-highlight-dark,
         app-font-primary: $app-font-primary-dark,
         app-font-secondary: $app-font-secondary-dark,
-        app-contrast-secondary: $app-secondary-contrast-dark
+        app-contrast-secondary: $app-secondary-contrast-dark,
+        app-gradient: $app-secondary-transparency-dark,
     )
 );
 

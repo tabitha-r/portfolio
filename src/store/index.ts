@@ -16,5 +16,13 @@ export {
 
 // Export skill selectors and actions
 export {
-    selectSkills
+    selectSkills,
+    selectFilter,
+    selectSortBy,
+    addFilter,
+    setFilter,
+    setSortBy,
 } from './skillSlice';
+
+// Export types
+export type { SkillType } from './skillSlice';

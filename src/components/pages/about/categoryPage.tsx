@@ -18,7 +18,7 @@ function CategoryPage(props: categoryProps) {
                 <h2>About</h2>
                 <h3>{props.name}</h3>
                 <p>{props.description}</p>
-                <SkillCardContainer filter={[props.id]} />
+                <SkillCardContainer filter={[props.id]} sort="tags" />
             </section>
         </div>
     )

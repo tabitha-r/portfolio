@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 // Import media
@@ -20,12 +20,7 @@ interface backgroundProps {
 }
 
 function Background(props: backgroundProps) {
-    const [currentPage, setCurrentPage] = useState(props.page);
-
-    // Updates the current page whenever the props update
-    useEffect(() => {
-        setCurrentPage(props.page);
-    }, [props.page]);
+    const currentPage = props.page;
 
     return (
         <div className="background-svg">

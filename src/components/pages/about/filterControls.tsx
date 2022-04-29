@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+// Import store
+import { selectFilter, selectSortBy, setSortBy, useAppDispatch, useAppSelector } from '../../../store';
+
+// Import components
 import SkillCardContainer from './skillCardContainer';
+import FilterCheckbox from './filterCheckbox';
 
 function FilterControls() {
-    const [selectedFilters, setSelectedFilters] = useState(['']);
+    const filter = useAppSelector(selectFilter);
+    const sort = useAppSelector(selectSortBy);
+    const dispatch = useAppDispatch();
 
     // Array of all available filters to choose from
     // These match the tags in the skillSlice of the store
@@ -22,44 +30,34 @@ function FilterControls() {
         ['app', 'Apps & Programs'],
         ['vc', 'Version Control'],
         ['documentation', 'Documentation'],
-        ['testing', 'Testing']
+        ['testing', 'Testing'],
     ];
 
-    const handleSelection = (tag: string) => {
-        let newFilters: string[] = [''];
-
-        if (newFilters.includes(tag)) {
-            newFilters = newFilters.filter((value) => {
-                return value !== tag
-            });
-        } else {
-            newFilters.push(tag);
-        };
-
-        setSelectedFilters(newFilters);
-    };
-
     return (
-        <div className="category-section">
+        <section className="category-section">
+            <h2>About</h2>
+            <h3>All Skills</h3>
+            <h4>Filter:</h4>
             <div className="filter-controls">
-                <p>Filter:</p>
-                {filters.map((filter, index) => {
+                {filters.map((tag, index) => {
                     return (
-                    <button 
-                        id={filter[0]}
-                        name={filter[0]}
-                        className="filter-checkbox" 
-                        onClick={() => handleSelection(filter[0])}
+                    <FilterCheckbox 
+                        id={tag[0]}
+                        name={tag[1]}
                         key={`filterbutton-${index}`}
-                    >
-                        {filter[1]}
-                    </button>
+                    />
                 )})}
             </div>
-            <section>
-                <SkillCardContainer filter={selectedFilters} />
-            </section>
-        </div>
+            <label htmlFor="selectSort">Sort by:</label>
+            <select id="selectSort" name="sort" onChange={(e) => dispatch(setSortBy(e.target.value))}>
+                <option value="tags">Categories</option>
+                <option value="nameaz">Names A-Z</option>
+                <option value="nameza">Names Z-A</option>
+                <option value="levelasc">Lowest Skill Level</option>
+                <option value="leveldesc">Highest Skill Level</option>
+            </select>
+            <SkillCardContainer filter={filter} sort={sort} />
+        </section>
         
     )
 };

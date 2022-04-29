@@ -3,7 +3,9 @@
 $light-contrast-light: hsl(50, 84%, 62%);
 $light-contrast-mid: hsl(50, 100%, 47%);
 $light-contrast-dark: hsl(40, 100%, 48%);
+
 $app-secondary-contrast-light: hsl(180, 100%, 25%);
+$app-secondary-transparency-light: hsla(180, 100%, 25%, 0.4);
 
 $browser-bg-light: hsl(218, 15%, 89%);
 $browser-tab-light: hsl(0, 0%, 100%);
@@ -32,6 +34,7 @@ $dark-contrast-mid: hsl(50, 100%, 60%);
 $dark-contrast-dark: hsl(40, 100%, 50%);
 
 $app-secondary-contrast-dark: hsl(180, 100%, 30%);
+$app-secondary-transparency-dark: hsla(180, 100%, 30%, 0.4);
 
 $browser-bg-dark: hsl(0, 0%, 6%);
 $browser-tab-dark: hsl(0, 0%, 19%);
