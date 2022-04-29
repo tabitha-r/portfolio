@@ -5,7 +5,7 @@
 
 A portfolio site designed for my personal use.
 
-[Preview](https://www.tabithariley.co.uk)
+<!-- [Preview](https://www.tabithariley.co.uk) -->
 </div>
 
 ***
