@@ -15,14 +15,19 @@ A portfolio site designed for my personal use.
 This is my personal portfolio site as a web developer. It is developed using React and built by Vite.
 
 ### Created using
+* [TypeScript](https://www.typescriptlang.org/)
+* [Sass](https://sass-lang.com/)
 * [React](https://reactjs.org)
 * [Redux](https://redux.js.org)
 * [React Router](https://reactrouter.com/)
 * [React Spring](https://react-spring.io)
 * [React Transition Group](https://reactcommunity.org/react-transition-group/)
 * [Vite](https://vitejs.dev/)
-* [Sass](https://sass-lang.com/)
+
+### Acknowledgements
 * [FontAwesome](https://fontawesome.com/)
+* [Aaron Iker](https://codepen.io/aaroniker/pen/abzgWEx)
+* [unDraw](https://undraw.co/)
 
 ***
 
