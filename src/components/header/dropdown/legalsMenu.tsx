@@ -52,7 +52,7 @@ function LegalMenu(props: MenuProps) {
 
             {legalPages.map((page, index) => {
                 return (
-                <Link to="/legals/terms" key={`legalpage-${index}`}>
+                <Link to={page.link} key={`legalpage-${index}`}>
                     <button className="menu-item" onClick={() => props.setDropdownOpen(false)}>
                         <FontAwesomeIcon icon={page.icon} className="dropdown-icon" />
                             <div className='dropdown-item-name'>

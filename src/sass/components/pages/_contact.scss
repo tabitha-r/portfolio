@@ -1,0 +1,89 @@
+@use '../../abstracts' as *;
+
+.contact-page {
+    @extend %center-in-div;
+
+    @media (max-width: 600px) {
+        align-items: flex-start;
+    }
+
+    section {
+        padding: 2rem;
+        border-radius: 15px;
+
+        @media (max-width: 600px) {
+            padding: 1rem;
+            margin: .5rem;
+        }
+
+        h2 {
+            @include themed() {
+                color: t(contrast-dark);
+                font-size: 2rem;
+                text-align: left;
+            }
+        }
+        
+        @include themed() {
+            background-color: t(app-fg1);
+            box-shadow: 2px 2px 10px t(app-shadow);
+        }
+
+        form {
+            padding: 1rem;
+            font-size: 1.6rem;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                transition: .2s ease;
+
+                &:focus-within {
+                    @include themed() {
+                        color: t(contrast-dark);
+                    }
+                }
+
+                input, textarea {
+                    @extend %body-font;
+                    font-size: 1rem;
+                    margin: 0 1rem;
+                    padding: .5rem;
+                    border-radius: 8px;
+                    border: none;
+                    width: 100%;
+                    transition: .2s ease;
+
+                    @include themed() {
+                        background-color: t(app-fg3);
+                        box-shadow: inset 1px 1px 6px t(app-shadow);
+                        color: t(app-font-primary);
+
+                    &:focus {
+                            border: 2px solid t(app-secondary-contrast);
+                            background-color: t(app-highlight);
+                        }
+                    }
+                }
+            }
+
+            button {
+                @include standard-button();
+                @include themed() {
+                background-color: t(contrast-light);
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: t(contrast-dark);
+
+
+                        &:active {
+                            background-color: t(app-highlight);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

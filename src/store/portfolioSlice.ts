@@ -28,12 +28,36 @@ import {
     tarotDesktop,
     tarotMobile,
     lurkitDesktop,
-    lurkitMobile
+    lurkitMobile,
+    devPortfolioMobile,
+    devPortfolioDesktop
 } from '../components/media/portfolio-examples';
 
 // Set inital state for portfolio slice 
 const initialState: Portfolio = {
-    projects: [
+    projects: [,
+        {
+            name: 'dramate',
+            desktopPreview: '',
+            mobilePreview: '',
+            tech: ['React', 'CSS-in-JS', 'JavaScript'],
+            description: 'A placeholder site for a blog launch.',
+            notableFeatures: ['Single Page App', 'Transition animations', 'Light and Dark Mode'],
+            link: 'https://www.dramate.co.uk/',
+            id: 'dramate',
+            built: 'May 2022',
+        },
+        {
+            name: 'Reddit Client',
+            desktopPreview: lurkitDesktop,
+            mobilePreview: lurkitMobile,
+            tech: ['React', 'Redux', 'CSS-in-JS'],
+            description: 'An app for browsing and pinning popular categories using the Reddit API.',
+            notableFeatures: ['Live data from Reddit through the Reddit API', 'Animated logo on hover', 'Pinnable Subreddits', 'Dark Mode/Light Mode Toggle'],
+            link: 'http://www.tabithariley.digital/lurkit/',
+            id: 'lurkit',
+            built: 'January 2022',
+        },
         {
             name: 'Company Homepage',
             desktopPreview: vaHomepageDesktop,
@@ -57,17 +81,6 @@ const initialState: Portfolio = {
             built: 'November 2021',
         },
         {
-            name: 'Reddit Client',
-            desktopPreview: lurkitDesktop,
-            mobilePreview: lurkitMobile,
-            tech: ['React', 'Redux', 'CSS-in-JS'],
-            description: 'An app for browsing and pinning popular categories using the Reddit API.',
-            notableFeatures: ['Live data from Reddit through the Reddit API', 'Animated logo on hover', 'Pinnable Subreddits', 'Dark Mode/Light Mode Toggle'],
-            link: 'http://www.tabithariley.digital/lurkit/',
-            id: 'lurkit',
-            built: 'January 2022',
-        },
-        {
             name: 'Random Generator',
             desktopPreview: tarotDesktop,
             mobilePreview: tarotMobile,
@@ -80,10 +93,10 @@ const initialState: Portfolio = {
         },
         {
             name: 'Portfolio Site',
-            desktopPreview: '',
-            mobilePreview: '',
+            desktopPreview: devPortfolioDesktop,
+            mobilePreview: devPortfolioMobile,
             tech: ['HTML', 'CSS', 'JavaScript'],
-            description: 'A portfolio site for a designer.',
+            description: 'A portfolio site for a developer.',
             notableFeatures: ['Responsive layout', 'Navigation sliding in and out on hover'],
             link: '',
             id: 'portfolio',

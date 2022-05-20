@@ -13,7 +13,7 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 
 // Import Routes
-import { Home, About, Portfolio, Contact, NotFound } from './components/pages';
+import { Home, About, Portfolio, Contact, NotFound, LegalPage } from './components/pages';
 
 // Import CSS
 import './index.css';
@@ -28,6 +28,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="about" element={<About />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="legals" element={<LegalPage activeSection={undefined} />}>
+              <Route path="terms" element={<LegalPage activeSection="terms" />} />
+              <Route path="privacy" element={<LegalPage activeSection="privacy" />} />
+              <Route path="disclaimer" element={<LegalPage activeSection="disclaimer" />} />
+              <Route path="accessibility" element={<LegalPage activeSection="accessibility" />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

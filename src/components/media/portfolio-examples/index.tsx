@@ -7,6 +7,8 @@ import vaHomepageMobile from './va-homepage-mobile.png';
 import clubSiteMobile from './club-site-mobile.png';
 import lurkitMobile from './lurkit-mobile.png';
 import tarotMobile from './tarot-mobile.png';
+import devPortfolioDesktop from './dev-portfolio-desktop.png';
+import devPortfolioMobile from './dev-portfolio-mobile.png';
 
 export {
     vaHomepageDesktop,
@@ -16,5 +18,7 @@ export {
     tarotDesktop,
     tarotMobile,
     lurkitDesktop,
-    lurkitMobile
+    lurkitMobile,
+    devPortfolioMobile,
+    devPortfolioDesktop
 };

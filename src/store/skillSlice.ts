@@ -299,7 +299,7 @@ const initialState: AllSkills = {
             level: 6,
             icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mocha/mocha-plain.svg',
             description: 'A testing framework for JavaScript.',
-            tags: ['frontend', 'spa', 'development', 'all']
+            tags: ['testing', 'app', 'development', 'all']
         }, 
         electron: {
             id: 29,
@@ -308,7 +308,7 @@ const initialState: AllSkills = {
             level: 3,
             icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg',
             description: 'A platform for building desktop apps.',
-            tags: ['testing', 'app', 'development', 'all']
+            tags: ['frontend', 'spa', 'development', 'all']
         }, 
     },
     filter: ['all'],

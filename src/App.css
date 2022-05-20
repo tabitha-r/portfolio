@@ -11,7 +11,7 @@ CSS compiled using Sass
 https://sass-lang.com/
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-.about .about-carousel .category-section .general-about p, .home .cta-section, .dropdown-container .menu-item, .App p, .App input {
+.contact-page section form span input, .contact-page section form span textarea, .about .about-carousel .category-section .general-about p, .home .cta-section, .dropdown-container .menu-item, .App p, .App input {
   font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
 }
@@ -26,7 +26,7 @@ https://sass-lang.com/
   font-weight: 400;
 }
 
-.home .cta-section .big-cta button, .page.not-found, .url-bar button {
+.contact-page, .home .cta-section .big-cta button, .page.not-found, .url-bar button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1407,6 +1407,114 @@ https://sass-lang.com/
   .portfolio-page .project-card {
     width: 90%;
   }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    align-items: flex-start;
+  }
+}
+.contact-page section {
+  padding: 2rem;
+  border-radius: 15px;
+}
+@media (max-width: 600px) {
+  .contact-page section {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+}
+.theme--light .contact-page section h2 {
+  color: #f5a300;
+  font-size: 2rem;
+  text-align: left;
+}
+.theme--dark .contact-page section h2 {
+  color: #ffaa00;
+  font-size: 2rem;
+  text-align: left;
+}
+.theme--light .contact-page section {
+  background-color: #f1f2f4;
+  box-shadow: 2px 2px 10px #9191a1;
+}
+.theme--dark .contact-page section {
+  background-color: #2f3137;
+  box-shadow: 2px 2px 10px #020203;
+}
+.contact-page section form {
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.contact-page section form span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.2s ease;
+}
+.theme--light .contact-page section form span:focus-within {
+  color: #f5a300;
+}
+.theme--dark .contact-page section form span:focus-within {
+  color: #ffaa00;
+}
+.contact-page section form span input, .contact-page section form span textarea {
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  transition: 0.2s ease;
+}
+.theme--light .contact-page section form span input, .theme--light .contact-page section form span textarea {
+  background-color: #ebedef;
+  box-shadow: inset 1px 1px 6px #9191a1;
+  color: #111112;
+}
+.theme--light .contact-page section form span input:focus, .theme--light .contact-page section form span textarea:focus {
+  border: 2px solid;
+  background-color: #e6e8ea;
+}
+.theme--dark .contact-page section form span input, .theme--dark .contact-page section form span textarea {
+  background-color: #282a2e;
+  box-shadow: inset 1px 1px 6px #020203;
+  color: #f2f2f2;
+}
+.theme--dark .contact-page section form span input:focus, .theme--dark .contact-page section form span textarea:focus {
+  border: 2px solid;
+  background-color: #3f434a;
+}
+.contact-page section form button {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  border: none;
+  margin: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.contact-page section form button:hover {
+  cursor: pointer;
+}
+.theme--light .contact-page section form button {
+  background-color: #efd44d;
+}
+.theme--light .contact-page section form button:hover {
+  cursor: pointer;
+  background-color: #f5a300;
+}
+.theme--light .contact-page section form button:hover:active {
+  background-color: #e6e8ea;
+}
+.theme--dark .contact-page section form button {
+  background-color: #ffeb85;
+}
+.theme--dark .contact-page section form button:hover {
+  cursor: pointer;
+  background-color: #ffaa00;
+}
+.theme--dark .contact-page section form button:hover:active {
+  background-color: #3f434a;
 }
 
 .floating-icons {
