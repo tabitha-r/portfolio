@@ -1,16 +1,16 @@
 import React from 'react';
 
 // Import store
-import { selectFilter, selectSortBy, setSortBy, useAppDispatch, useAppSelector } from '../../../store';
+import { selectSortBy, setSortBy, useAppDispatch, useAppSelector } from '../../../store';
 
 // Import components
-import SkillCardContainer from './skillCardContainer';
 import FilterCheckbox from './filterCheckbox';
 
 function FilterControls() {
-    const filter = useAppSelector(selectFilter);
-    const sort = useAppSelector(selectSortBy);
+    // make store data and actions accessible
     const dispatch = useAppDispatch();
+
+    const sort = useAppSelector(selectSortBy);
 
     // Array of all available filters to choose from
     // These match the tags in the skillSlice of the store
@@ -34,10 +34,7 @@ function FilterControls() {
     ];
 
     return (
-        <section className="category-section">
-            <h2>About</h2>
-            <h3>All Skills</h3>
-            <h4>Filter:</h4>
+        <div className="filter-control-box">
             <div className="filter-controls">
                 {filters.map((tag, index) => {
                     return (
@@ -48,16 +45,22 @@ function FilterControls() {
                     />
                 )})}
             </div>
-            <label htmlFor="selectSort">Sort by:</label>
-            <select id="selectSort" name="sort" onChange={(e) => dispatch(setSortBy(e.target.value))}>
-                <option value="tags">Categories</option>
-                <option value="nameaz">Names A-Z</option>
-                <option value="nameza">Names Z-A</option>
-                <option value="levelasc">Lowest Skill Level</option>
-                <option value="leveldesc">Highest Skill Level</option>
-            </select>
-            <SkillCardContainer filter={filter} sort={sort} />
-        </section>
+            <div className="select-wrapper">
+                <label htmlFor="selectSort">Sort by:</label>
+                <select
+                  id="selectSort"
+                  name="sort"
+                  onChange={(e) => dispatch(setSortBy(e.target.value))}
+                  value={sort}
+                >
+                    <option value="tags">Categories</option>
+                    <option value="nameaz">Names A-Z</option>
+                    <option value="nameza">Names Z-A</option>
+                    <option value="levelasc">Lowest Skill Level</option>
+                    <option value="leveldesc">Highest Skill Level</option>
+                </select>
+            </div>
+        </div>
         
     )
 };

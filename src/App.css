@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 - - -
 Web Developer Portfolio Site
@@ -10,7 +11,7 @@ CSS compiled using Sass
 https://sass-lang.com/
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-.home .cta-section, .dropdown-container .menu-item, .App p, .App input {
+.about .about-carousel .category-section .general-about p, .home .cta-section, .dropdown-container .menu-item, .App p, .App input {
   font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
 }
@@ -20,7 +21,7 @@ https://sass-lang.com/
   font-weight: 700;
 }
 
-.about .skill-card h4, .about .about-carousel .category-section p, .about .about-carousel .category-section .filter-controls .filter-checkbox label, .App code, .App button {
+.about .skill-card h4, .about .about-carousel .category-section p, .about .about-carousel .category-section .filter-control-box select, .about .about-carousel .category-section .filter-controls .filter-checkbox label, .App code, .App button {
   font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-weight: 400;
 }
@@ -1052,28 +1053,102 @@ https://sass-lang.com/
   align-items: flex-start;
   justify-content: flex-end;
   flex-flow: column nowrap;
-  padding: 1rem 0rem 0rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
 }
 .about .about-carousel .category-section h3, .about .about-carousel .category-section .main-about-title {
   font-size: 3rem;
-  padding-left: 3rem;
   font-weight: 700;
 }
 .about .about-carousel .category-section p {
   font-size: 1.4rem;
   padding-left: 4rem;
 }
+.about .about-carousel .category-section .general-about p {
+  margin: 0.3em;
+  padding-left: 6rem;
+  padding-right: 25%;
+}
 .about .about-carousel .category-section .card-container {
   align-items: flex-end;
   overflow-y: scroll;
   z-index: 2;
-  max-height: 500px;
+  height: 200px;
+}
+.about .about-carousel .category-section.filter-page {
+  padding: 2rem;
+  display: block;
+}
+.about .about-carousel .category-section.filter-page.full-box .card-container {
+  height: 85%;
+}
+.about .about-carousel .category-section.filter-page.squished-box .card-container {
+  height: 46%;
+}
+.about .about-carousel .category-section.filter-page .card-container {
+  align-items: flex-start;
+}
+.about .about-carousel .category-section .filter-control-box {
+  display: relative;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin: 0.8rem;
+}
+.theme--light .about .about-carousel .category-section .filter-control-box {
+  background-color: white;
+  box-shadow: 2px 2px 10px #9191a1;
+}
+.theme--dark .about .about-carousel .category-section .filter-control-box {
+  background-color: #36393f;
+  box-shadow: 2px 2px 10px #020203;
+}
+.about .about-carousel .category-section .filter-control-box .select-wrapper {
+  position: relative;
+  width: max-content;
+  padding-right: 1.5rem;
+  margin-left: 1rem;
+}
+.about .about-carousel .category-section .filter-control-box .select-wrapper::after {
+  content: "▼";
+  font-size: 1rem;
+  top: 0.8rem;
+  right: 2.5rem;
+  position: absolute;
+}
+.about .about-carousel .category-section .filter-control-box select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin: 0.5rem;
+  border: none;
+  width: max-content;
+}
+.theme--light .about .about-carousel .category-section .filter-control-box select {
+  box-shadow: inset 1px 1px 3px #9191a1;
+  background-color: #dde0e3;
+  color: #111112;
+}
+.theme--light .about .about-carousel .category-section .filter-control-box select:focus-within {
+  background-color: #e6e8ea;
+}
+.theme--dark .about .about-carousel .category-section .filter-control-box select {
+  box-shadow: inset 1px 1px 3px #020203;
+  background-color: #212326;
+  color: #f2f2f2;
+}
+.theme--dark .about .about-carousel .category-section .filter-control-box select:focus-within {
+  background-color: #3f434a;
+}
+.about .about-carousel .category-section .filter-control-box select option {
+  padding: 0.3rem;
 }
 .about .about-carousel .category-section .filter-controls {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-flow: row wrap;
+  margin: 0.6rem;
 }
 .about .about-carousel .category-section .filter-controls .filter-checkbox {
   margin: 0.2rem 0.4rem;
@@ -1211,6 +1286,127 @@ https://sass-lang.com/
 .about .background-svg .carousel-background-exit-active {
   opacity: 0;
   transform: translatex(20%);
+}
+
+.theme--light .portfolio-page {
+  background-image: linear-gradient(0.25turn, #f5a300, transparent);
+}
+.theme--dark .portfolio-page {
+  background-image: linear-gradient(0.25turn, #ffaa00, transparent);
+}
+.portfolio-page h2 {
+  font-family: "Fira Code", monospace;
+  font-weight: 400;
+  text-align: left;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  padding: 2rem;
+}
+.portfolio-page h2 span {
+  letter-spacing: 0rem;
+}
+.portfolio-page .project-cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.portfolio-page .project-card {
+  margin: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  height: auto;
+  min-width: 300px;
+  width: 28%;
+}
+.theme--light .portfolio-page .project-card {
+  background-color: #f1f2f4;
+  box-shadow: 2px 2px 10px #9191a1;
+}
+.theme--dark .portfolio-page .project-card {
+  background-color: #2f3137;
+  box-shadow: 2px 2px 10px #020203;
+}
+.portfolio-page .project-card .preview-image {
+  width: 100%;
+  max-height: 25%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+.portfolio-page .project-card .project-info {
+  text-align: left;
+  padding: 1.2rem;
+}
+.portfolio-page .project-card .project-info h3 {
+  font-size: 2rem;
+}
+.portfolio-page .project-card .project-info button {
+  font-size: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 15px;
+  border: none;
+  margin: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1.2rem;
+  transition: 0.2s ease;
+}
+.portfolio-page .project-card .project-info button:hover {
+  cursor: pointer;
+}
+.theme--light .portfolio-page .project-card .project-info button:hover {
+  background-color: #efd44d;
+  color: teal;
+}
+.theme--dark .portfolio-page .project-card .project-info button:hover {
+  background-color: #ffeb85;
+  color: #009999;
+}
+.theme--light .portfolio-page .project-card .project-info button:active {
+  box-shadow: inset 1px 1px 5px #9191a1;
+}
+.theme--dark .portfolio-page .project-card .project-info button:active {
+  box-shadow: inset 1px 1px 5px #020203;
+}
+.portfolio-page .project-card .project-info a {
+  transition: 0.2s ease;
+}
+.theme--light .portfolio-page .project-card .project-info a {
+  color: teal;
+}
+.theme--light .portfolio-page .project-card .project-info a:hover {
+  color: #f5a300;
+}
+.theme--dark .portfolio-page .project-card .project-info a {
+  color: #009999;
+}
+.theme--dark .portfolio-page .project-card .project-info a:hover {
+  color: #ffaa00;
+}
+.portfolio-page .project-card .project-lists {
+  padding: 1rem 2rem;
+  max-height: 25%;
+  text-align: left;
+}
+.theme--light .portfolio-page .project-card .project-lists {
+  background-color: white;
+  box-shadow: inset 0px 1px 3px #9191a1;
+}
+.theme--dark .portfolio-page .project-card .project-lists {
+  background-color: #36393f;
+  box-shadow: inset 0px 1px 3px #020203;
+}
+@media (max-width: 1400px) {
+  .portfolio-page .project-card {
+    width: 40%;
+  }
+}
+@media (max-width: 800px) {
+  .portfolio-page .project-card {
+    width: 90%;
+  }
 }
 
 .floating-icons {

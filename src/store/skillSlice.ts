@@ -299,7 +299,16 @@ const initialState: AllSkills = {
             level: 6,
             icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mocha/mocha-plain.svg',
             description: 'A testing framework for JavaScript.',
-            tags: ['testing', 'development', 'all']
+            tags: ['frontend', 'spa', 'development', 'all']
+        }, 
+        electron: {
+            id: 29,
+            name: 'Electron',
+            link: 'https://www.electronjs.org/',
+            level: 3,
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg',
+            description: 'A platform for building desktop apps.',
+            tags: ['testing', 'app', 'development', 'all']
         }, 
     },
     filter: ['all'],

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import CategoryPage from './categoryPage';
 import GeneralAbout from './generalAbout';
 import ChooseCategory from './chooseCategory';
-import FilterControls from './filterControls';
+import FilterPage from './filterPage';
 import Background from './background';
 
 export function About() {
@@ -77,7 +77,7 @@ export function About() {
                   className="about-testing" />}
 
                 { currentPage === 'all' &&
-                <FilterControls />}
+                <FilterPage />}
 
               </div>
               <Background page={currentPage} />

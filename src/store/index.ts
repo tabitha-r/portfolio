@@ -24,5 +24,11 @@ export {
     setSortBy,
 } from './skillSlice';
 
+// Export portfolio selectors and actions
+export {
+    selectProjects
+} from './portfolioSlice';
+
 // Export types
 export type { SkillType } from './skillSlice';
+export type { Project } from './portfolioSlice';

@@ -4,12 +4,14 @@ import { configureStore } from '@reduxjs/toolkit';
 // Import relevant reducers
 import colourSchemeReducer from './colourSchemeSlice';
 import skillsReducer from './skillSlice';
+import portfolioReducer from './portfolioSlice';
 
 // Configure store using imported reducers.
 export const store = configureStore({
     reducer: {
         colourScheme: colourSchemeReducer,
         skills: skillsReducer,
+        portfolio: portfolioReducer,
     },
 });
 
